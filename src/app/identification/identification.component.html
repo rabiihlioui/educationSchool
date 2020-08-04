@@ -1,0 +1,24 @@
+<div id="login" tabindex="-1"  aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+        <div class="modal-header tit-up">
+            <h4 class="modal-title">Identification</h4>
+        </div>
+        <div class="modal-body customer-box">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs">
+                <li><a [ngClass]="{'active': activeTab}" (click)="toggleLogin()" data-toggle="tab">Login</a></li>
+                <li><a [ngClass]="{'active': !activeTab}" (click)="toggleRegiter()" data-toggle="tab">Registration</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <app-login *ngIf="loginFlag"></app-login>
+
+                <app-registration *ngIf="registerFlag"></app-registration>
+
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
