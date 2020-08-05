@@ -1,21 +1,56 @@
 <div class="tab-pane active" id="Login">
-    <form role="form" class="form-horizontal">
+    <form #loginForm="ngForm" role="form" class="form-horizontal">
         <div class="form-group">
             <div class="col-sm-12">
-                <input class="form-control" id="email1" placeholder="Name" type="text">
+                <input
+                    #email="ngModel"
+                    class="form-control"
+                    id="email"
+                    placeholder="Email"
+                    type="email"
+                    name="email"
+                    email
+                    ngModel
+                    required>
+                <div
+                    class="alert alert-danger"
+                    *ngIf="email.invalid && email.touched"
+                >
+                    Invalid Email, example foulen@domain
+                </div>
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-12">
-                <input class="form-control" id="exampleInputPassword1" placeholder="Email" type="email">
+                <input
+                    #password="ngModel" 
+                    class="form-control"
+                    id="password"
+                    placeholder="Password"
+                    type="password"
+                    name="password"
+                    minlength="5"
+                    ngModel
+                    required>
+                <div
+                    class="alert alert-danger"
+                    *ngIf="password.invalid && password.touched"
+                >
+                    Invalid Password, must have at least 5 characters
+                </div>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-10">
-                <button type="submit" class="btn btn-outline-success btn-lg">
+                <button
+                    type="submit"
+                    class="btn btn-outline-success btn-lg"
+                    [disabled]="loginForm.invalid"
+                    (click)="handleLogin(loginForm)"
+                >
                     Submit
                 </button>
-                <a class="for-pwd" href="javascript:;">Forgot your password?</a>
+                <!-- <a class="for-pwd" href="javascript:;">Forgot your password?</a> -->
             </div>
         </div>
     </form>

@@ -24,10 +24,14 @@
                     <li class="nav-item" [ngClass]="{'active': activeMenuItemService.activeBlog}">
                         <a class="nav-link" (click)="activeMenuItemService.activateBlog()" routerLink="/blog">Blog</a>
                     </li>
-                    <li class="nav-item" [ngClass]="{'active': activeMenuItemService.activeTeachers}">
+                    <li class="nav-item"
+                        [ngClass]="{'active': activeMenuItemService.activeTeachers}"
+                        *ngIf="authenticationService.isUserLoggedIn()">
                         <a class="nav-link" (click)="activeMenuItemService.activateTeachers()" routerLink="/teachers">Teachers</a>
                     </li>
-                    <li class="nav-item" [ngClass]="{'active': activeMenuItemService.activeStudents}">
+                    <li class="nav-item"
+                        [ngClass]="{'active': activeMenuItemService.activeStudents}"
+                        *ngIf="authenticationService.isUserLoggedIn()">
                         <a class="nav-link" (click)="activeMenuItemService.activateStudents()" routerLink="/students">Students</a>
                     </li>
                     <li class="nav-item" [ngClass]="{'active': activeMenuItemService.activePricing}">
@@ -37,8 +41,14 @@
                         <a class="nav-link" (click)="activeMenuItemService.activateContact()" routerLink="/contact">Contact</a>
                     </li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right" *ngIf="!authenticationService.isUserLoggedIn()">
+                    <li><a class="hover-btn-new log orange" routerLink="/identification"><span>Identification</span></a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right mr-2" *ngIf="authenticationService.isUserStudent()">
                     <li><a class="hover-btn-new log orange" routerLink="/identification"><span>Book Now</span></a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right" *ngIf="authenticationService.isUserLoggedIn()">
+                    <li><a class="hover-btn-new log orange" routerLink="/logout"><span>Logout</span></a></li>
                 </ul>
             </div>
         </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActiveMenuItemService } from '../services/active-menu-item.service';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,8 @@ import { ActiveMenuItemService } from '../services/active-menu-item.service';
 export class HeaderComponent implements OnInit {
 
   constructor(
-    private activeMenuItemService: ActiveMenuItemService
+    public activeMenuItemService: ActiveMenuItemService,
+    public authenticationService: AuthenticationService
   ) { }
 
   ngOnInit(): void {

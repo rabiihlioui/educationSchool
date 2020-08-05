@@ -12,6 +12,8 @@ import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
 import { IdentificationComponent } from './identification/identification.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { ErrorComponent } from './error/error.component';
+import { LogoutComponent } from './logout/logout.component';
 
 const routes: Routes = [
   { 
@@ -28,9 +30,11 @@ const routes: Routes = [
       { path: 'students', component: StudentsComponent },
       { path: 'pricing', component: PricingComponent },
       { path: 'contact', component: ContactComponent },
-      { path: 'identification', component: IdentificationComponent }
+      { path: 'identification', component: IdentificationComponent },
+      { path: 'logout', component: LogoutComponent }
     ] 
-  }
+  },
+  { path: '**' , component: ErrorComponent }
 ];
 
 @NgModule({
