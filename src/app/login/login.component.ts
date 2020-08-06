@@ -22,12 +22,6 @@ export class LoginComponent implements OnInit {
   handleLogin(loginForm: NgForm) {
     this.authenticationService.authenticate(loginForm.value.email, loginForm.value.password);
     this.router.navigate(['home']);
-    // this.authenticationService.login(loginForm.value).subscribe(
-    //   (loginData) => {
-    //     localStorage.setItem('loginToken', loginData.id)
-    //     this.router.navigate(['welcome'])
-    //   }
-    // )
   }
 
 }

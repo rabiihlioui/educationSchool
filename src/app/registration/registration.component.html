@@ -1,31 +1,127 @@
 <div class="tab-pane" id="Registration">
-    <form role="form" class="form-horizontal">
+    <form #regisForm="ngForm" role="form" class="form-horizontal">
         <div class="form-group">
             <div class="col-sm-12">
-                <input class="form-control" placeholder="Name" type="text">
+                <input
+                    #firstname="ngModel"
+                    class="form-control"
+                    id="firstname"
+                    placeholder="First Name"
+                    type="text"
+                    name="firstname"
+                    ngModel
+                    required>
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-12">
-                <input class="form-control" id="email" placeholder="Email" type="email">
+                <input
+                    #lastname="ngModel"
+                    class="form-control"
+                    id="lastname"
+                    placeholder="Last Name"
+                    type="text"
+                    name="lastname"
+                    ngModel
+                    required>
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-12">
-                <input class="form-control" id="mobile" placeholder="Mobile" type="email">
+                <input
+                    #email="ngModel"
+                    class="form-control"
+                    id="email"
+                    placeholder="Email"
+                    name="email"
+                    email
+                    ngModel
+                    required>
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-12">
-                <input class="form-control" id="password" placeholder="Password" type="password">
+                <input
+                    #password="ngModel" 
+                    class="form-control"
+                    id="password"
+                    placeholder="Password"
+                    type="password"
+                    name="password"
+                    minlength="5"
+                    ngModel
+                    required>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-12">
+                <input
+                    #cin="ngModel" 
+                    class="form-control"
+                    id="cin"
+                    placeholder="Identity Card"
+                    type="number"
+                    name="cin"
+                    min="8"
+                    max="8"
+                    ngModel
+                    required>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-12">
+                <input
+                    #age="ngModel"
+                    class="form-control"
+                    id="age"
+                    placeholder="Age"
+                    type="number"
+                    name="cin"
+                    min="2"
+                    max="2"
+                    ngModel
+                    required>
+            </div>
+        </div>
+        <div class="form-group" style="margin-left: 16px; margin-right: 16px;">
+            <div class="col-sm-12 form-control">
+                <label class="radio-inline mr-3">
+                    <input
+                        #status="ngModel"
+                        type="radio"
+                        id="status"
+                        value="student"
+                        name="status"
+                        (change)='selectedStatus=$event.target.value'
+                        ngModel
+                        required>
+                    Student
+                </label>
+                <label class="radio-inline">
+                    <input
+                        #status="ngModel"
+                        type="radio"
+                        id="status"
+                        value="teacher"
+                        name="status"
+                        (change)='selectedStatus=$event.target.value'
+                        ngModel
+                        required>
+                    Teacher
+                </label>
             </div>
         </div>
         <div class="row">							
             <div class="col-sm-10">
-                <button type="button" class="btn btn-outline-success btn-lg mr-3">
-                    Save &amp; Continue
+                <button
+                    type="button"
+                    class="btn btn-outline-success btn-lg mr-3"
+                    [disabled]="regisForm.invalid"
+                    (click)="handleRegistration(regisForm)"
+                    routerLink="/home">
+                    Register &amp; Start Your Journey
                 </button>
-                <button type="button" class="btn btn-outline-secondary btn-lg">
+                <button type="reset" class="btn btn-outline-secondary btn-lg">
                     Cancel</button>
             </div>
         </div>
