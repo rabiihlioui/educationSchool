@@ -18,21 +18,41 @@
                     <li class="nav-item" [ngClass]="{'active': activeMenuItemService.activeAbout}">
                         <a class="nav-link" (click)="activeMenuItemService.activateAbout()" routerLink="/aboutUs">About Us</a>
                     </li>
-                    <li class="nav-item" [ngClass]="{'active': activeMenuItemService.activeCourse}">
-                        <a class="nav-link" (click)="activeMenuItemService.activateCourse()" routerLink="/course">Course</a>
+                    <li class="nav-item" [ngClass]="{'active': activeMenuItemService.activeCourses}">
+                        <a class="nav-link" (click)="activeMenuItemService.activateCourses()" routerLink="/courses">Courses</a>
+                    </li>
+                    <li class="nav-item"
+                        *ngIf="authenticationService.isUserStudent() || authenticationService.isUserTeacher()"
+                        [ngClass]="{'active': activeMenuItemService.activatemyCourses}">
+                        <a class="nav-link" (click)="activeMenuItemService.activateMyCourses()" routerLink="/myCourses">MyCourses</a>
+                    </li>
+                    <li class="nav-item"
+                        *ngIf="authenticationService.isUserTeacher()"
+                        [ngClass]="{'active': activeMenuItemService.activeMyStudents}">
+                        <a class="nav-link" (click)="activeMenuItemService.activateMyStudents()" routerLink="/myStudents">MyStudents</a>
+                    </li>
+                    <li class="nav-item"
+                        *ngIf="authenticationService.isUserStudent()"
+                        [ngClass]="{'active': activeMenuItemService.activeMyTeachers}">
+                        <a class="nav-link" (click)="activeMenuItemService.activateMyTeachers()" routerLink="/myTeachers">MyTeachers</a>
                     </li>
                     <li class="nav-item" [ngClass]="{'active': activeMenuItemService.activeBlog}">
                         <a class="nav-link" (click)="activeMenuItemService.activateBlog()" routerLink="/blog">Blog</a>
                     </li>
                     <li class="nav-item"
                         [ngClass]="{'active': activeMenuItemService.activeTeachers}"
-                        *ngIf="authenticationService.isUserLoggedIn()">
+                        *ngIf="authenticationService.isUserAdmin()">
                         <a class="nav-link" (click)="activeMenuItemService.activateTeachers()" routerLink="/teachers">Teachers</a>
                     </li>
                     <li class="nav-item"
                         [ngClass]="{'active': activeMenuItemService.activeStudents}"
-                        *ngIf="authenticationService.isUserLoggedIn()">
+                        *ngIf="authenticationService.isUserAdmin()">
                         <a class="nav-link" (click)="activeMenuItemService.activateStudents()" routerLink="/students">Students</a>
+                    </li>
+                    <li class="nav-item"
+                        [ngClass]="{'active': activeMenuItemService.activeBookers}"
+                        *ngIf="authenticationService.isUserAdmin()">
+                        <a class="nav-link" (click)="activeMenuItemService.activateBookers()" routerLink="/bookers">Bookers</a>
                     </li>
                     <li class="nav-item" [ngClass]="{'active': activeMenuItemService.activePricing}">
                         <a class="nav-link" (click)="activeMenuItemService.activatePricing()" routerLink="/pricing">Pricing</a>

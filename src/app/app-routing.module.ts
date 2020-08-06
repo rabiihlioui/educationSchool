@@ -9,11 +9,15 @@ import { TeachersComponent } from './teachers/teachers.component';
 import { StudentsComponent } from './students/students.component';
 import { PricingComponent } from './pricing/pricing.component';
 import { ContactComponent } from './contact/contact.component';
-import { LoginComponent } from './login/login.component';
 import { IdentificationComponent } from './identification/identification.component';
-import { RegistrationComponent } from './registration/registration.component';
 import { ErrorComponent } from './error/error.component';
 import { LogoutComponent } from './logout/logout.component';
+import { MyCoursesComponent } from './my-courses/my-courses.component';
+import { MyStudentsComponent } from './my-students/my-students.component';
+import { MyTeachersComponent } from './my-teachers/my-teachers.component';
+import { BookersComponent } from './bookers/bookers.component';
+import { CoursesComponent } from './courses/courses.component';
+import { CourseFormComponent } from './course-form/course-form.component';
 
 const routes: Routes = [
   { 
@@ -24,7 +28,12 @@ const routes: Routes = [
       { path: '', component: HomeComponent },
       { path: 'home', component: HomeComponent },
       { path: 'aboutUs', component: AboutUsComponent },
-      { path: 'course', component: CourseComponent },
+      { path: 'courses', component: CoursesComponent },
+      { path: 'courses/addCourse', component: CourseFormComponent },
+      { path: 'myCourses', component: MyCoursesComponent },
+      { path: 'myStudents', component: MyStudentsComponent },
+      { path: 'myTeachers', component: MyTeachersComponent },
+      { path: 'bookers', component: BookersComponent },
       { path: 'blog', component: BlogComponent },
       { path: 'teachers', component: TeachersComponent },
       { path: 'students', component: StudentsComponent },

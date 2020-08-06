@@ -1,0 +1,36 @@
+<div *ngIf="outlet.isActivated == false">
+    <div class="all-title-box">
+        <div class="conainer text-center">
+            <h1>Courses</h1>
+        </div>
+    </div>
+
+    <div id="overviews" class="section wb">
+        <div class="container">
+
+            <button type="button"
+                    class="btn btn-danger btn-lg" 
+                    (click)="deleteAllCourses()"
+                    *ngIf="manageCoursesService.coursesList.length"
+                    style="margin-right: 20px">Delete All Courses</button>
+
+            <button type="button"
+                    class="btn btn-success btn-lg" 
+                    routerLink='addCourse'
+                    *ngIf="manageCoursesService.coursesList.length">Add Course</button>
+
+            <hr class="invis"> 
+
+            <div class="row"> 
+                <div class="col-lg-3 col-md-6 col-12" *ngFor="let course of manageCoursesService.coursesList" style="margin-bottom: 40px">
+                    <div class="course-item">
+                        <app-course [course]="course"></app-course>
+                    </div>
+                </div><!-- end col -->
+            </div><!-- end row -->
+
+        </div><!-- end container -->
+    </div><!-- end section -->
+</div>
+
+<router-outlet #outlet="outlet"></router-outlet>

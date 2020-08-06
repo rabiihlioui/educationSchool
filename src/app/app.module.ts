@@ -19,6 +19,12 @@ import { RegistrationComponent } from './registration/registration.component';
 import { ErrorComponent } from './error/error.component';
 import { FooterComponent } from './footer/footer.component';
 import { IdentificationComponent } from './identification/identification.component';
+import { MyCoursesComponent } from './my-courses/my-courses.component';
+import { MyStudentsComponent } from './my-students/my-students.component';
+import { MyTeachersComponent } from './my-teachers/my-teachers.component';
+import { BookersComponent } from './bookers/bookers.component';
+import { CoursesComponent } from './courses/courses.component';
+import { CourseFormComponent } from './course-form/course-form.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +43,13 @@ import { IdentificationComponent } from './identification/identification.compone
     RegistrationComponent,
     ErrorComponent,
     FooterComponent,
-    IdentificationComponent
+    IdentificationComponent,
+    MyCoursesComponent,
+    MyStudentsComponent,
+    MyTeachersComponent,
+    BookersComponent,
+    CoursesComponent,
+    CourseFormComponent
   ],
   imports: [
     BrowserModule,

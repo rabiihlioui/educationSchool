@@ -7,10 +7,14 @@ export class ActiveMenuItemService implements OnInit {
 
   activeHome: boolean
   activeAbout: boolean
-  activeCourse: boolean
+  activeCourses: boolean
+  activatemyCourses: boolean
+  activatemyStudents: boolean
+  activatemyTeachers: boolean
   activeBlog: boolean
   activeTeachers: boolean
   activeStudents: boolean
+  activeBookers: boolean
   activePricing: boolean
   activeContact: boolean
 
@@ -19,10 +23,14 @@ export class ActiveMenuItemService implements OnInit {
   ngOnInit(): void {
     this.activeHome = true;
     this.activeAbout = false;
-    this.activeCourse = false;
+    this.activeCourses = false;
+    this.activatemyCourses = false;
+    this.activatemyStudents = false;
+    this.activatemyTeachers = false;
     this.activeBlog = false;
     this.activeTeachers = false;
     this.activeStudents = false;
+    this.activeBookers = false;
     this.activePricing = false;
     this.activeContact = false;
   }
@@ -30,10 +38,14 @@ export class ActiveMenuItemService implements OnInit {
   activateHome() {
     this.activeHome = true;
     this.activeAbout = false;
-    this.activeCourse = false;
+    this.activeCourses = false;
+    this.activatemyCourses = false;
+    this.activatemyStudents = false;
+    this.activatemyTeachers = false;
     this.activeBlog = false;
     this.activeTeachers = false;
     this.activeStudents = false;
+    this.activeBookers = false;
     this.activePricing = false;
     this.activeContact = false;
   }
@@ -41,21 +53,74 @@ export class ActiveMenuItemService implements OnInit {
   activateAbout() {
     this.activeHome = false;
     this.activeAbout = true;
-    this.activeCourse = false;
+    this.activeCourses = false;
+    this.activatemyCourses = false;
+    this.activatemyStudents = false;
+    this.activatemyTeachers = false;
     this.activeBlog = false;
     this.activeTeachers = false;
     this.activeStudents = false;
+    this.activeBookers = false;
     this.activePricing = false;
     this.activeContact = false;
   }
 
-  activateCourse() {
+  activateCourses() {
     this.activeHome = false;
     this.activeAbout = false;
-    this.activeCourse = true;
+    this.activeCourses = true;
+    this.activatemyCourses = false;
+    this.activatemyStudents = false;
+    this.activatemyTeachers = false;
     this.activeBlog = false;
     this.activeTeachers = false;
     this.activeStudents = false;
+    this.activeBookers = false;
+    this.activePricing = false;
+    this.activeContact = false;
+  }
+
+  activateMyCourses() {
+    this.activeHome = false;
+    this.activeAbout = false;
+    this.activeCourses = false;
+    this.activatemyCourses = true;
+    this.activatemyStudents = false;
+    this.activatemyTeachers = false;
+    this.activeBlog = false;
+    this.activeTeachers = false;
+    this.activeStudents = false;
+    this.activeBookers = false;
+    this.activePricing = false;
+    this.activeContact = false;
+  }
+
+  activateMyStudents() {
+    this.activeHome = false;
+    this.activeAbout = false;
+    this.activeCourses = false;
+    this.activatemyCourses = false;
+    this.activatemyStudents = true;
+    this.activatemyTeachers = false;
+    this.activeBlog = false;
+    this.activeTeachers = false;
+    this.activeStudents = false;
+    this.activeBookers = false;
+    this.activePricing = false;
+    this.activeContact = false;
+  }
+
+  activateMyTeachers() {
+    this.activeHome = false;
+    this.activeAbout = false;
+    this.activeCourses = false;
+    this.activatemyCourses = false;
+    this.activatemyStudents = false;
+    this.activatemyTeachers = true;
+    this.activeBlog = false;
+    this.activeTeachers = false;
+    this.activeStudents = false;
+    this.activeBookers = false;
     this.activePricing = false;
     this.activeContact = false;
   }
@@ -63,10 +128,14 @@ export class ActiveMenuItemService implements OnInit {
   activateBlog() {
     this.activeHome = false;
     this.activeAbout = false;
-    this.activeCourse = false;
+    this.activeCourses = false;
+    this.activatemyCourses = false;
+    this.activatemyStudents = false;
+    this.activatemyTeachers = false;
     this.activeBlog = true;
     this.activeTeachers = false;
     this.activeStudents = false;
+    this.activeBookers = false;
     this.activePricing = false;
     this.activeContact = false;
   }
@@ -74,10 +143,14 @@ export class ActiveMenuItemService implements OnInit {
   activateTeachers() {
     this.activeHome = false;
     this.activeAbout = false;
-    this.activeCourse = false;
+    this.activeCourses = false;
+    this.activatemyCourses = false;
+    this.activatemyStudents = false;
+    this.activatemyTeachers = false;
     this.activeBlog = false;
     this.activeTeachers = true;
     this.activeStudents = false;
+    this.activeBookers = false;
     this.activePricing = false;
     this.activeContact = false;
   }
@@ -85,10 +158,29 @@ export class ActiveMenuItemService implements OnInit {
   activateStudents() {
     this.activeHome = false;
     this.activeAbout = false;
-    this.activeCourse = false;
+    this.activeCourses = false;
+    this.activatemyCourses = false;
+    this.activatemyStudents = false;
+    this.activatemyTeachers = false;
     this.activeBlog = false;
     this.activeTeachers = false;
     this.activeStudents = true;
+    this.activeBookers = false;
+    this.activePricing = false;
+    this.activeContact = false;
+  }
+
+  activateBookers() {
+    this.activeHome = false;
+    this.activeAbout = false;
+    this.activeCourses = false;
+    this.activatemyCourses = false;
+    this.activatemyStudents = false;
+    this.activatemyTeachers = false;
+    this.activeBlog = false;
+    this.activeTeachers = false;
+    this.activeStudents = false;
+    this.activeBookers = true;
     this.activePricing = false;
     this.activeContact = false;
   }
@@ -96,10 +188,14 @@ export class ActiveMenuItemService implements OnInit {
   activatePricing() {
     this.activeHome = false;
     this.activeAbout = false;
-    this.activeCourse = false;
+    this.activeCourses = false;
+    this.activatemyCourses = false;
+    this.activatemyStudents = false;
+    this.activatemyTeachers = false;
     this.activeBlog = false;
     this.activeTeachers = false;
     this.activeStudents = false;
+    this.activeBookers = false;
     this.activePricing = true;
     this.activeContact = false;
   }
@@ -107,10 +203,14 @@ export class ActiveMenuItemService implements OnInit {
   activateContact() {
     this.activeHome = false;
     this.activeAbout = false;
-    this.activeCourse = false;
+    this.activeCourses = false;
+    this.activatemyCourses = false;
+    this.activatemyStudents = false;
+    this.activatemyTeachers = false;
     this.activeBlog = false;
     this.activeTeachers = false;
     this.activeStudents = false;
+    this.activeBookers = false
     this.activePricing = false;
     this.activeContact = true;
   }

@@ -1,0 +1,80 @@
+<div tabindex="-1"  aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header tit-up">
+                <h3 class="modal-title">Add Course Form</h3>
+            </div>
+            <div class="modal-body customer-box">
+                <div class="tab-content">
+                    <form #addCourseForm="ngForm">
+                        <div class="form-group">
+                          <label for="coursename">Course Name</label>
+                          <input #coursename="ngModel"
+                                 type="text"
+                                 class="form-control"
+                                 name="coursename"
+                                 id="coursename"
+                                 aria-describedby="coursename"
+                                 placeholder="Enter course name"
+                                 ngModel
+                                 required>
+                        </div>
+                        <div class="form-group">
+                          <label for="period">Period</label>
+                          <input #period="ngModel"
+                                 type="number"
+                                 class="form-control"
+                                 name="period"
+                                 id="period"
+                                 placeholder="Period of the course in number of months"
+                                 ngModel
+                                 required>
+                        </div>
+                        <div class="form-group">
+                          <label for="numberOfBooks">Number of books</label>
+                          <input #numberOfBooks="ngModel"
+                                 type="number"
+                                 class="form-control"
+                                 name="numberOfBooks"
+                                 id="numberOfBooks"
+                                 placeholder="Number of books needed for this course"
+                                 ngModel
+                                 required>
+                        </div>
+                        <div class="form-group">
+                          <label for="maxStudent">Number of Students</label>
+                          <input #maxStudent="ngModel"
+                                 type="number"
+                                 class="form-control"
+                                 name="maxStudent"
+                                 id="maxStudent"
+                                 placeholder="Number of students that can apply for this course"
+                                 ngModel
+                                 required>
+                        </div>
+                        <div class="form-group">
+                          <label for="description">Course Description</label>
+                          <textarea #description="ngModel"
+                                    class="form-control"
+                                    name="description"
+                                    id="description"
+                                    rows="3"
+                                    ngModel
+                                    required></textarea>
+                        </div>
+                        <button 
+                            type="submit"
+                            class="btn btn-success"
+                            style="margin-right: 20px;"
+                            [disabled]="addCourseForm.invalid"
+                            (click)="addCourse(addCourseForm.value)"
+                        >
+                            Add Course
+                        </button>
+                        <button type="reset" class="btn btn-warning">Cancel</button>
+                    </form>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

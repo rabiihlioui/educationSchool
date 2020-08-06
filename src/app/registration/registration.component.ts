@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ManageStudentsService } from '../services/manage-students.service';
 import { Student } from '../classes/student';
-import { ManageTeachersService } from '../services/manage-teachers.service';
 import { Teacher } from '../classes/teacher';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../services/authentication.service';
+import { RegistrationService } from '../services/registration.service';
 
 @Component({
   selector: 'app-registration',
@@ -17,8 +16,7 @@ export class RegistrationComponent implements OnInit {
   selectedStatus: boolean
 
   constructor(
-    private manageStudentsService: ManageStudentsService,
-    private manageTeachersService: ManageTeachersService,
+    private registrationService: RegistrationService,
     private authenticationService: AuthenticationService,
     private router: Router
   ) { }
@@ -51,13 +49,13 @@ export class RegistrationComponent implements OnInit {
   }
 
   registerStudent(student: Student) {
-    student.id = this.manageStudentsService.studentsList[this.manageStudentsService.studentsList.length - 1].id + 1;
-    this.manageStudentsService.studentsList.push(student)
+    student.id = this.registrationService.registeredStudentsList[this.registrationService.registeredStudentsList.length - 1].id + 1;
+    this.registrationService.registeredStudentsList.push(student)
   }
 
   registerTeacher(teacher: Teacher) {
-    teacher.id = this.manageTeachersService.teachersList[this.manageTeachersService.teachersList.length - 1].id + 1;
-    this.manageTeachersService.teachersList.push(teacher)
+    teacher.id = this.registrationService.registeredTeachersList[this.registrationService.registeredTeachersList.length - 1].id + 1;
+    this.registrationService.registeredTeachersList.push(teacher)
   }
 
 }

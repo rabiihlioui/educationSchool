@@ -13,7 +13,7 @@ export class AuthenticationService {
   ) { }
 
   authenticate(email, password) {
-    if(email === 'admin@admin.com' && password === 'admin') {
+    if(email === 'admin@creator.com' && password === 'admin') {
       sessionStorage.setItem('authenticatedUser', 'adminUser');
     }
     else {
