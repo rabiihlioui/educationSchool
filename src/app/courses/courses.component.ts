@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ManageCoursesService } from '../services/manage-courses.service';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-courses',
@@ -9,7 +10,8 @@ import { ManageCoursesService } from '../services/manage-courses.service';
 export class CoursesComponent implements OnInit {
 
   constructor(
-    public manageCoursesService: ManageCoursesService
+    public manageCoursesService: ManageCoursesService,
+    public authenticationService: AuthenticationService
   ) { }
 
   ngOnInit(): void {

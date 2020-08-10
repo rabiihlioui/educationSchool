@@ -11,13 +11,13 @@
             <button type="button"
                     class="btn btn-danger btn-lg" 
                     (click)="deleteAllCourses()"
-                    *ngIf="manageCoursesService.coursesList.length"
+                    *ngIf="manageCoursesService.coursesList.length && authenticationService.isUserAdmin()"
                     style="margin-right: 20px">Delete All Courses</button>
 
             <button type="button"
                     class="btn btn-success btn-lg" 
                     routerLink='addCourse'
-                    *ngIf="manageCoursesService.coursesList.length">Add Course</button>
+                    *ngIf="manageCoursesService.coursesList.length && authenticationService.isUserAdmin()">Add Course</button>
 
             <hr class="invis"> 
 

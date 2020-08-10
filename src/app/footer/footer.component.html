@@ -25,11 +25,21 @@
                         <h3>Information Link</h3>
                     </div>
                     <ul class="footer-links">
-                        <li><a routerLink="/home">Home</a></li>
-                        <li><a routerLink="/blog">Blog</a></li>
-                        <li><a routerLink="/pricing">Pricing</a></li>
-                        <li><a routerLink="/aboutUs">About</a></li>
-                        <li><a routerLink="/contact">Contact</a></li>
+                        <li [ngClass]="{'active': activeMenuItemService.activeHome}">
+                            <a (click)="activeMenuItemService.activateHome()" routerLink="/home">Home</a>
+                        </li>
+                        <li [ngClass]="{'active': activeMenuItemService.activeBlog}">
+                            <a (click)="activeMenuItemService.activateBlog()" routerLink="/blog">Blog</a>
+                        </li>
+                        <li [ngClass]="{'active': activeMenuItemService.activePricing}">
+                            <a (click)="activeMenuItemService.activatePricing()" routerLink="/pricing">Pricing</a>
+                        </li>
+                        <li [ngClass]="{'active': activeMenuItemService.activeAbout}">
+                            <a (click)="activeMenuItemService.activateAbout()" routerLink="/aboutUs">About</a>
+                        </li>
+                        <li [ngClass]="{'active': activeMenuItemService.activeContact}">
+                            <a (click)="activeMenuItemService.activateContact()" routerLink="/contact">Contact</a>
+                        </li>
                     </ul><!-- end links -->
                 </div><!-- end clearfix -->
             </div><!-- end col -->

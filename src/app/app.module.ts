@@ -25,6 +25,8 @@ import { MyTeachersComponent } from './my-teachers/my-teachers.component';
 import { BookersComponent } from './bookers/bookers.component';
 import { CoursesComponent } from './courses/courses.component';
 import { CourseFormComponent } from './course-form/course-form.component';
+import { EditCourseFormComponent } from './edit-course-form/edit-course-form.component';
+import { TeacherComponent } from './teacher/teacher.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { CourseFormComponent } from './course-form/course-form.component';
     MyTeachersComponent,
     BookersComponent,
     CoursesComponent,
-    CourseFormComponent
+    CourseFormComponent,
+    EditCourseFormComponent,
+    TeacherComponent
   ],
   imports: [
     BrowserModule,

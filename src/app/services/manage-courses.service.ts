@@ -40,4 +40,13 @@ export class ManageCoursesService {
     }
   }
 
+  getCourseById(courseId: number): any {
+    const long = this.coursesList.length;
+    for (let i = 0; i < long; i++) {
+      if (courseId == this.coursesList[i].id) {
+        return this.coursesList[i]
+      }
+    }
+  }
+
 }

@@ -1,0 +1,75 @@
+<div tabindex="-1"  aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header tit-up">
+                <h3 class="modal-title">Edit Course Form</h3>
+            </div>
+            <div class="modal-body customer-box">
+                <div class="tab-content">
+                    <form #editCourseForm="ngForm">
+                        <div class="form-group">
+                          <label for="coursename">Course Name</label>
+                          <input #coursename="ngModel"
+                                 type="text"
+                                 class="form-control"
+                                 name="coursename"
+                                 id="coursename"
+                                 [(ngModel)]="editedCourse.course"
+                                 required>
+                        </div>
+                        <div class="form-group">
+                          <label for="period">Period</label>
+                          <input #period="ngModel"
+                                 type="number"
+                                 class="form-control"
+                                 name="period"
+                                 id="period"
+                                 [(ngModel)]="editedCourse.period"
+                                 required>
+                        </div>
+                        <div class="form-group">
+                          <label for="numberOfBooks">Number of books</label>
+                          <input #numberOfBooks="ngModel"
+                                 type="number"
+                                 class="form-control"
+                                 name="numberOfBooks"
+                                 id="numberOfBooks"
+                                 [(ngModel)]="editedCourse.numberOfBooks"
+                                 required>
+                        </div>
+                        <div class="form-group">
+                          <label for="maxStudent">Number of Students</label>
+                          <input #maxStudent="ngModel"
+                                 type="number"
+                                 class="form-control"
+                                 name="maxStudent"
+                                 id="maxStudent"
+                                 [(ngModel)]="editedCourse.maxStudent"
+                                 required>
+                        </div>
+                        <div class="form-group">
+                          <label for="description">Course Description</label>
+                          <textarea #description="ngModel"
+                                    class="form-control"
+                                    name="description"
+                                    id="description"
+                                    rows="3"
+                                    [(ngModel)]="editedCourse.description"
+                                    required></textarea>
+                        </div>
+                        <button 
+                            type="submit"
+                            class="btn btn-success"
+                            style="margin-right: 20px;"
+                            [disabled]="editCourseForm.invalid"
+                            (click)="editCourse(editCourseForm.value)"
+                        >
+                            Edit Course
+                        </button>
+                        <!-- <button type="reset" class="btn btn-warning">Empty Course</button> -->
+                    </form>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

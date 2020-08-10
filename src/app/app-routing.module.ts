@@ -18,6 +18,7 @@ import { MyTeachersComponent } from './my-teachers/my-teachers.component';
 import { BookersComponent } from './bookers/bookers.component';
 import { CoursesComponent } from './courses/courses.component';
 import { CourseFormComponent } from './course-form/course-form.component';
+import { EditCourseFormComponent } from './edit-course-form/edit-course-form.component';
 
 const routes: Routes = [
   { 
@@ -28,7 +29,14 @@ const routes: Routes = [
       { path: '', component: HomeComponent },
       { path: 'home', component: HomeComponent },
       { path: 'aboutUs', component: AboutUsComponent },
-      { path: 'courses', component: CoursesComponent },
+      { 
+        path: 'courses',
+        component: CoursesComponent,
+        children:
+        [
+          { path: 'editCourse/:courseId', component: EditCourseFormComponent }
+        ]
+      },
       { path: 'courses/addCourse', component: CourseFormComponent },
       { path: 'myCourses', component: MyCoursesComponent },
       { path: 'myStudents', component: MyStudentsComponent },

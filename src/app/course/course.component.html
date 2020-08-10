@@ -27,7 +27,21 @@
 </div>
 <div class="course-meta-bot">
     <ul>
-        <li><button type="button" class="btn btn-outline-success" (click)="editCourse()">Edit</button></li>
-        <li><button type="button" class="btn btn-outline-danger" (click)="deleteCourse()">Delete</button></li>
+        <li>
+            <button type="button"
+                    class="btn btn-outline-success"
+                    *ngIf="authenticationService.isUserAdmin()"
+                    routerLink="editCourse/{{course.id}}">
+                Edit
+            </button>
+        </li>
+        <li>
+            <button type="button"
+                    class="btn btn-outline-danger"
+                    *ngIf="authenticationService.isUserAdmin()"
+                    (click)="deleteCourse()">
+                Delete
+            </button>
+        </li>
     </ul>
 </div>

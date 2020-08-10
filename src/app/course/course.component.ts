@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ManageCoursesService } from '../services/manage-courses.service';
 import { Course } from '../classes/course';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-course',
@@ -12,7 +13,8 @@ export class CourseComponent implements OnInit {
   @Input() course: Course
 
   constructor(
-    public manageCoursesService: ManageCoursesService
+    public manageCoursesService: ManageCoursesService,
+    public authenticationService: AuthenticationService
   ) { }
 
   ngOnInit(): void {
