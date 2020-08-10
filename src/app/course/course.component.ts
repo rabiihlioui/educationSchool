@@ -20,14 +20,8 @@ export class CourseComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addCourse() {
-  }
-
   deleteCourse() {
     this.manageCoursesService.deleteCourse(this.course);
-  }
-
-  editCourse() {
   }
 
 }

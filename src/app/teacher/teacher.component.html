@@ -2,14 +2,21 @@
     <img src="../assets/images/team-01.png">
     <div class="social">
         <ul>
-            <li><a href="#" class="fa fa-facebook"></a></li>
-            <li><a href="#" class="fa fa-twitter"></a></li>
-            <li><a href="#" class="fa fa-linkedin"></a></li>
-            <li><a href="#" class="fa fa-skype"></a></li>
+            <ul class="list-inline m-0">
+                <li class="list-inline-item">
+                    <button class="btn btn-primary btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="CV"><i class="fa fa-table"></i></button>
+                </li>
+                <li class="list-inline-item">
+                    <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></button>
+                </li>
+                <li class="list-inline-item">
+                    <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
+                </li>
+            </ul>
         </ul>
     </div>
 </div>
 <div class="team-content">
-    <h3 class="title">Williamson</h3>
-    <span class="post">Web Developer</span>
+    <h3 class="title">{{teacher.firstname}} {{teacher.lastname}}</h3>
+    <span class="post">{{teacher.occupation}}</span>
 </div>

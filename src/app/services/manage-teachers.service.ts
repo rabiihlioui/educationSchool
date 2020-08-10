@@ -7,7 +7,10 @@ import { Teacher } from '../classes/teacher';
 export class ManageTeachersService {
 
   teachersList = [
-    new Teacher(1, 'Slimen', 'Labyedh', 'slimenLabyedh@gmail.com', 'freud', 96458712, 50)
+    new Teacher(1, 'Slimen', 'Labyedh', 'slimenLabyedh@gmail.com', 'freud', 'Psychotherapist', 96458712, 50),
+    new Teacher(1, 'Slimen', 'Labyedh', 'slimenLabyedh@gmail.com', 'freud', 'Psychotherapist', 96458712, 50),
+    new Teacher(1, 'Slimen', 'Labyedh', 'slimenLabyedh@gmail.com', 'freud', 'Psychotherapist', 96458712, 50),
+    new Teacher(1, 'Slimen', 'Labyedh', 'slimenLabyedh@gmail.com', 'freud', 'Psychotherapist', 96458712, 50)
   ]
 
   constructor() { }

@@ -8,11 +8,12 @@ import { Teacher } from '../classes/teacher';
 })
 export class TeacherComponent implements OnInit {
 
-  @Input() course: Teacher
+  @Input() teacher: Teacher
 
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.teacher)
   }
 
 }

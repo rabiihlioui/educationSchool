@@ -12,7 +12,7 @@ export class RegistrationService {
   ]
 
   registeredTeachersList = [
-    new Teacher(1, 'Fou', 'Chika', 'fouchika@gmail.com', 'nasba', 96458712, 50)
+    new Teacher(1, 'Fou', 'Chika', 'fouchika@gmail.com', 'nasba', 'nasab', 96458712, 50)
   ]
 
   constructor() { }
