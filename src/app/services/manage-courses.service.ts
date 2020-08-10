@@ -16,6 +16,8 @@ export class ManageCoursesService {
   constructor() { }
 
   addCourse(course: Course) {
+    course.id = this.coursesList[this.coursesList.length - 1].id + 1
+    course.photoPath = "../assets/images/newCourse.jpg"
     this.coursesList.push(course)
   }
 

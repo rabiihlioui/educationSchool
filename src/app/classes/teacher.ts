@@ -7,6 +7,7 @@ export class Teacher {
     occupation: string;
     cin: number;
     age: number;
+    photoPath: string;
     constructor(id: number = 0,
                 firstname: string = '',
                 lastname: string = '',
@@ -14,7 +15,8 @@ export class Teacher {
                 password: string = '',
                 occupation: string = '',
                 cin: number = 0,
-                age: number = 0) {
+                age: number = 0,
+                photoPath: string = '') {
       this.id = id;
       this.firstname = firstname;
       this.lastname = lastname;
@@ -23,5 +25,6 @@ export class Teacher {
       this.occupation = occupation
       this.cin = cin;
       this.age = age;
+      this.photoPath = photoPath;
     }
 }

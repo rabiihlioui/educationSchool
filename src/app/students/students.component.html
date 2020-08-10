@@ -1,171 +1,35 @@
-<div class="all-title-box">
-    <div class="container text-center">
-        <h1>Students<span class="m_1">Lorem Ipsum dolroin gravida nibh vel velit.</span></h1>
+<div *ngIf="teacherOutlet.isActivated == false">
+        <div class="all-title-box">
+            <div class="container text-center">
+                <h1>Students<span class="m_1">Lorem Ipsum dolroin gravida nibh vel velit.</span></h1>
+            </div>
+        </div>
+    
+        <div id="teachers" class="section wb">
+            <div class="container">
+    
+                <button type="button"
+                    class="btn btn-danger btn-lg" 
+                    (click)="deleteAllStudents()"
+                    *ngIf="manageStudentsService.studentsList.length && authenticationService.isUserAdmin()"
+                    style="margin-right: 20px">Delete All Students</button>
+    
+                <button type="button"
+                    class="btn btn-success btn-lg" 
+                    routerLink='addStudent'
+                    *ngIf="manageStudentsService.studentsList.length && authenticationService.isUserAdmin()">Add Student</button>
+    
+                <hr class="invis"> 
+    
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-12" *ngFor="let student of manageStudentsService.studentsList">
+                        <div class="our-team">
+                            <app-student [student]="student"></app-student>
+                        </div>
+                    </div>
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </div><!-- end section -->
     </div>
-</div>
-
-<div id="students" class="section wb">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-md-6 col-12">
-                <div class="our-team">
-                    <div class="team-img">
-                        <img src="../assets/images/team-01.png">
-                        <div class="social">
-                            <ul>
-                                <li><a href="#" class="fa fa-facebook"></a></li>
-                                <li><a href="#" class="fa fa-twitter"></a></li>
-                                <li><a href="#" class="fa fa-linkedin"></a></li>
-                                <li><a href="#" class="fa fa-skype"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="team-content">
-                        <h3 class="title">Williamson</h3>
-                        <span class="post">Web Developer</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-12">
-                <div class="our-team">
-                    <div class="team-img">
-                        <img src="../assets/images/team-02.png">
-                        <div class="social">
-                            <ul>
-                                <li><a href="#" class="fa fa-facebook"></a></li>
-                                <li><a href="#" class="fa fa-twitter"></a></li>
-                                <li><a href="#" class="fa fa-linkedin"></a></li>
-                                <li><a href="#" class="fa fa-skype"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="team-content">
-                        <h3 class="title">Kristiana</h3>
-                        <span class="post">Web Designer</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-12">
-                <div class="our-team">
-                    <div class="team-img">
-                        <img src="../assets/images/team-03.png">
-                        <div class="social">
-                            <ul>
-                                <li><a href="#" class="fa fa-facebook"></a></li>
-                                <li><a href="#" class="fa fa-twitter"></a></li>
-                                <li><a href="#" class="fa fa-linkedin"></a></li>
-                                <li><a href="#" class="fa fa-skype"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="team-content">
-                        <h3 class="title">Steve Thomas</h3>
-                        <span class="post">Web Developer</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-12">
-                <div class="our-team">
-                    <div class="team-img">
-                        <img src="../assets/images/team-04.png">
-                        <div class="social">
-                            <ul>
-                                <li><a href="#" class="fa fa-facebook"></a></li>
-                                <li><a href="#" class="fa fa-twitter"></a></li>
-                                <li><a href="#" class="fa fa-linkedin"></a></li>
-                                <li><a href="#" class="fa fa-skype"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="team-content">
-                        <h3 class="title">Miranda joy</h3>
-                        <span class="post">Web Developer</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-lg-3 col-md-6 col-12">
-                <div class="our-team">
-                    <div class="team-img">
-                        <img src="../assets/images/team-01.png">
-                        <div class="social">
-                            <ul>
-                                <li><a href="#" class="fa fa-facebook"></a></li>
-                                <li><a href="#" class="fa fa-twitter"></a></li>
-                                <li><a href="#" class="fa fa-linkedin"></a></li>
-                                <li><a href="#" class="fa fa-skype"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="team-content">
-                        <h3 class="title">Williamson</h3>
-                        <span class="post">Web Developer</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-12">
-                <div class="our-team">
-                    <div class="team-img">
-                        <img src="../assets/images/team-02.png">
-                        <div class="social">
-                            <ul>
-                                <li><a href="#" class="fa fa-facebook"></a></li>
-                                <li><a href="#" class="fa fa-twitter"></a></li>
-                                <li><a href="#" class="fa fa-linkedin"></a></li>
-                                <li><a href="#" class="fa fa-skype"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="team-content">
-                        <h3 class="title">Kristiana</h3>
-                        <span class="post">Web Designer</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-12">
-                <div class="our-team">
-                    <div class="team-img">
-                        <img src="../assets/images/team-03.png">
-                        <div class="social">
-                            <ul>
-                                <li><a href="#" class="fa fa-facebook"></a></li>
-                                <li><a href="#" class="fa fa-twitter"></a></li>
-                                <li><a href="#" class="fa fa-linkedin"></a></li>
-                                <li><a href="#" class="fa fa-skype"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="team-content">
-                        <h3 class="title">Steve Thomas</h3>
-                        <span class="post">Web Developer</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-12">
-                <div class="our-team">
-                    <div class="team-img">
-                        <img src="../assets/images/team-04.png">
-                        <div class="social">
-                            <ul>
-                                <li><a href="#" class="fa fa-facebook"></a></li>
-                                <li><a href="#" class="fa fa-twitter"></a></li>
-                                <li><a href="#" class="fa fa-linkedin"></a></li>
-                                <li><a href="#" class="fa fa-skype"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="team-content">
-                        <h3 class="title">Miranda joy</h3>
-                        <span class="post">Web Developer</span>
-                    </div>
-                </div>
-            </div>
-        </div><!-- end row -->
-    </div><!-- end container -->
-</div><!-- end section -->	
+    
+    <router-outlet #teacherOutlet="outlet"></router-outlet>

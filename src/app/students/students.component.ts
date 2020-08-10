@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ManageStudentsService } from '../services/manage-students.service';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-students',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentsComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public manageStudentsService: ManageStudentsService,
+    public authenticationService: AuthenticationService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  deleteAllStudents() {
+    this.manageStudentsService.deleteAllStudents();
   }
 
 }

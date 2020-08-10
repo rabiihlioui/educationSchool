@@ -20,9 +20,7 @@ export class CourseFormComponent implements OnInit {
   }
 
   addCourse(newCourse: Course) {
-    newCourse.id = this.manageCoursesService.coursesList[this.manageCoursesService.coursesList.length - 1].id + 1
-    newCourse.photoPath = "../assets/images/newCourse.jpg"
-    this.manageCoursesService.coursesList.push(newCourse)
+    this.manageCoursesService.addCourse(newCourse)
     this.router.navigate(['courses'])
   }
 

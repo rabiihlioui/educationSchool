@@ -1,0 +1,110 @@
+<div tabindex="-1"  aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header tit-up">
+                <h3 class="modal-title">Add Teacher Form</h3>
+            </div>
+            <div class="modal-body customer-box">
+                <div class="tab-content">
+                    <form #addTeacherForm="ngForm">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <label for="firstname">FirstName</label>
+                              <input #firstname="ngModel"
+                                     type="text"
+                                     class="form-control"
+                                     name="firstname"
+                                     id="firstname"
+                                     aria-describedby="firstname"
+                                     placeholder="Enter Teacher First Name"
+                                     ngModel
+                                     required>
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label for="lastname">LastName</label>
+                              <input #lastname="ngModel"
+                                     type="text"
+                                     class="form-control"
+                                     name="lastname"
+                                     id="lastname"
+                                     aria-describedby="lastname"
+                                     placeholder="Enter Teacher Last Name"
+                                     ngModel
+                                     required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <label for="email">Email</label>
+                              <input #email="ngModel"
+                                     class="form-control"
+                                     name="email"
+                                     id="email"
+                                     placeholder="Enter Email"
+                                     email
+                                     ngModel
+                                     required>
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label for="password">Password</label>
+                              <input #password="ngModel"
+                                     type="password"
+                                     class="form-control"
+                                     name="password"
+                                     id="password"
+                                     placeholder="Enter Password"
+                                     ngModel
+                                     required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="occupation">Occupation</label>
+                          <input #occupation="ngModel"
+                                 type="text"
+                                 class="form-control"
+                                 name="occupation"
+                                 id="occupation"
+                                 placeholder="Enter Occupation"
+                                 ngModel
+                                 required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <label for="cin">Identity Card Number</label>
+                              <input #cin="ngModel"
+                                     type="number"
+                                     class="form-control"
+                                     name="cin"
+                                     id="cin"
+                                     placeholder="Enter Identity Card Number"
+                                     ngModel
+                                     required>
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label for="age">Age</label>
+                              <input #age="ngModel"
+                                     type="number"
+                                     class="form-control"
+                                     name="age"
+                                     id="age"
+                                     placeholder="Enter Age"
+                                     ngModel
+                                     required>
+                            </div>
+                        </div>
+                        <button 
+                            type="submit"
+                            class="btn btn-success"
+                            style="margin-right: 20px;"
+                            [disabled]="addTeacherForm.invalid"
+                            (click)="addTeacher(addTeacherForm.value)"
+                        >
+                            Add Teacher
+                        </button>
+                        <button type="reset" class="btn btn-warning">Cancel</button>
+                    </form>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

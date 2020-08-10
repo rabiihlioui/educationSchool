@@ -8,7 +8,7 @@ import { Student } from '../classes/student';
 export class RegistrationService {
 
   registeredStudentsList = [
-    new Student(1, 'Marwen', 'Hlioui', 'marwenhlioui@gmail.com', 'marwenpass', 96325678, 50)
+    new Student(1, 'Marwen', 'Hlioui', 'marwenhlioui@gmail.com', 'marwenpass', 'JSF', 96325678, 50)
   ]
 
   registeredTeachersList = [

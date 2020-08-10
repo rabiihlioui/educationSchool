@@ -1,5 +1,5 @@
 <div class="team-img">
-    <img src="{{teacher.photoPath}}">
+    <img src="{{student.photoPath}}">
     <div class="social">
         <ul>
             <ul class="list-inline m-0">
@@ -12,19 +12,19 @@
                     <button class="btn btn-success"
                             type="button"
                             title="Edit"
-                            routerLink="editTeacher/{{teacher.id}}"><i class="fa fa-edit"></i></button>
+                            routerLink="editStudent/{{student.id}}"><i class="fa fa-edit"></i></button>
                 </li>
                 <li class="list-inline-item">
                     <button class="btn btn-danger"
                             type="button"
                             title="Delete"
-                            (click)="deleteTeacher()"><i class="fa fa-trash"></i></button>
+                            (click)="deleteStudent()"><i class="fa fa-trash"></i></button>
                 </li>
             </ul>
         </ul>
     </div>
 </div>
 <div class="team-content">
-    <h3 class="title">{{teacher.firstname}} {{teacher.lastname}}</h3>
-    <span class="post">{{teacher.occupation}} Teacher</span>
+    <h3 class="title">{{student.firstname}} {{student.lastname}}</h3>
+    <span class="post">{{student.occupation}} Student</span>
 </div>
