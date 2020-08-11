@@ -8,7 +8,7 @@ export class ManageTeachersService {
 
   teachersList = [
     new Teacher(1, 'Emilia', 'Clark', 'emiliaclark@gmail.com', 'emilia', 'Web Developpment', 96458712, 50, '../assets/images/team-01.png'),
-    new Teacher(2, 'Kristina', 'Black', 'black.kristina@hotmail.com', 'black', 'Web Design', 96458712, 50, '../assets/images/team-02.png'),
+    new Teacher(2, 'Kristina', 'Black', 'black.kristina@hotmail.com', 'black', 'Hotel Management', 96458712, 50, '../assets/images/team-02.png'),
     new Teacher(3, 'Steve', 'Thomas', 'thomassteve@yahoo.fr', 'freud', 'Angular', 96458712, 50, '../assets/images/team-03.png'),
     new Teacher(4, 'zeineb', 'Labyedh', 'zeinebLabyedh@gmail.com', 'freud', 'JSF', 96458712, 50, '../assets/images/team-04.png')
   ]
@@ -47,6 +47,15 @@ export class ManageTeachersService {
     for (let i = 0; i < long; i++) {
       if (teacherId == this.teachersList[i].id) {
         return this.teachersList[i]
+      }
+    }
+  }
+
+  getTeacherByEmail(email: String): any {
+    for (let i = 0; i < this.teachersList.length; i++) {
+      const teacher = this.teachersList[i];
+      if (teacher.email == email) {
+        return teacher;
       }
     }
   }

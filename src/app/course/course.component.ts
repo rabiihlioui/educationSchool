@@ -16,7 +16,7 @@ export class CourseComponent implements OnInit {
   constructor(
     public manageCoursesService: ManageCoursesService,
     public authenticationService: AuthenticationService,
-    private bookingService: BookingService
+    public bookingService: BookingService
   ) { }
 
   ngOnInit(): void {

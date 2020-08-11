@@ -69,9 +69,9 @@
                 <ul class="nav navbar-nav navbar-right" *ngIf="!authenticationService.isUserLoggedIn()">
                     <li><a class="hover-btn-new log orange" routerLink="/identification"><span>Identification</span></a></li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right mr-2" *ngIf="authenticationService.isUserStudent()">
+                <!-- <ul class="nav navbar-nav navbar-right mr-2" *ngIf="authenticationService.isUserStudent()">
                     <li><a class="hover-btn-new log orange" routerLink="/identification"><span>Book Now</span></a></li>
-                </ul>
+                </ul> -->
                 <ul class="nav navbar-nav navbar-right" *ngIf="authenticationService.isUserLoggedIn()">
                     <li><a class="hover-btn-new log orange" routerLink="/logout"><span>Logout</span></a></li>
                 </ul>

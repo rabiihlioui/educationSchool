@@ -55,8 +55,11 @@ export class AuthenticationService {
   }
 
   getUserEmailFromSession() {
-    // return sessionStorage.getItem('userEmail');
-    console.log(sessionStorage.getItem('userEmail'))
+    return sessionStorage.getItem('userEmail');
+  }
+
+  getUserTypeFromSession() {
+    return sessionStorage.getItem('authenticatedUser');
   }
 
 }

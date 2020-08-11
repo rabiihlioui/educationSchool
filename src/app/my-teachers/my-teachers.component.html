@@ -1,1 +1,38 @@
-<p>my-teachers works!</p>
+<div>
+    <div class="all-title-box">
+        <div class="container text-center">
+            <h1>My Students<span class="m_1">Lorem Ipsum dolroin gravida nibh vel velit.</span></h1>
+        </div>
+    </div>
+
+    <div id="bookers" class="section wb">
+        <div class="container">
+            <div>
+                <table class="table table-striped table-dark">
+                    <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Occupation</th>
+                            <th>Identity Card</th>
+                            <th>Age</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let myTeacher of myTeachers">
+                            <td>{{myTeacher.firstname}}</td>
+                            <td>{{myTeacher.lastname}}</td>
+                            <td>{{myTeacher.email}}</td>
+                            <td>{{myTeacher.occupation}}</td>
+                            <td>{{myTeacher.cin}}</td>
+                            <td>{{myTeacher.age}}</td>
+                        </tr>             
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+            
+            

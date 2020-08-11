@@ -5,6 +5,7 @@ import { ManageTeachersService } from './manage-teachers.service';
 import { ManageStudentsService } from './manage-students.service';
 import { Course } from '../classes/course';
 import { RegistrationService } from './registration.service';
+import { AuthenticationService } from './authentication.service';
 
 @Injectable({
   providedIn: 'root'
@@ -32,7 +33,8 @@ export class BookingService {
   constructor(
     private manageTeachersService: ManageTeachersService,
     private manageStudentsService: ManageStudentsService,
-    private registrationService: RegistrationService
+    private registrationService: RegistrationService,
+    private authenticationService: AuthenticationService
   ) { }
 
   approveTeacherBooker(teacher: Teacher) {
@@ -62,13 +64,14 @@ export class BookingService {
   }
 
   bookCourse(course: Course) {
-    let userType = sessionStorage.getItem('authenticatedUser');
-    let userEmail = sessionStorage.getItem('userEmail');
+    let userType = this.authenticationService.getUserTypeFromSession();
+    let userEmail = this.authenticationService.getUserEmailFromSession();
     if (userType = 'studentUser') {
       for (let i = 0; i < this.manageStudentsService.studentsList.length; i++) {
         const stud = this.manageStudentsService.studentsList[i];
-        if (userEmail == stud.email)
+        if (userEmail == stud.email) {
           this.bookingWarning = 'You\'ve already booked this course';
+        }
         else {
           this.registrationService.registeredStudentsList.forEach(regisStud => {
             if (regisStud.email == userEmail)
