@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ManageCoursesService } from '../services/manage-courses.service';
 import { Course } from '../classes/course';
 import { AuthenticationService } from '../services/authentication.service';
+import { BookingService } from '../services/booking.service';
 
 @Component({
   selector: 'app-course',
@@ -14,7 +15,8 @@ export class CourseComponent implements OnInit {
 
   constructor(
     public manageCoursesService: ManageCoursesService,
-    public authenticationService: AuthenticationService
+    public authenticationService: AuthenticationService,
+    private bookingService: BookingService
   ) { }
 
   ngOnInit(): void {
@@ -22,6 +24,10 @@ export class CourseComponent implements OnInit {
 
   deleteCourse() {
     this.manageCoursesService.deleteCourse(this.course);
+  }
+
+  bookCourse(course: Course) {
+    this.bookingService.bookCourse(course);
   }
 
 }

@@ -32,6 +32,7 @@ import { EditTeacherFormComponent } from './edit-teacher-form/edit-teacher-form.
 import { StudentComponent } from './student/student.component';
 import { EditStudentFormComponent } from './edit-student-form/edit-student-form.component';
 import { AddStudentFormComponent } from './add-student-form/add-student-form.component';
+import { RegistrationsComponent } from './registrations/registrations.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { AddStudentFormComponent } from './add-student-form/add-student-form.com
     EditTeacherFormComponent,
     StudentComponent,
     EditStudentFormComponent,
-    AddStudentFormComponent
+    AddStudentFormComponent,
+    RegistrationsComponent
   ],
   imports: [
     BrowserModule,

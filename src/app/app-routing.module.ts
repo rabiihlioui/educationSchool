@@ -23,6 +23,7 @@ import { AddTeacherFormComponent } from './add-teacher-form/add-teacher-form.com
 import { EditTeacherFormComponent } from './edit-teacher-form/edit-teacher-form.component';
 import { EditStudentFormComponent } from './edit-student-form/edit-student-form.component';
 import { AddStudentFormComponent } from './add-student-form/add-student-form.component';
+import { RegistrationsComponent } from './registrations/registrations.component';
 
 const routes: Routes = [
   { 
@@ -65,6 +66,7 @@ const routes: Routes = [
         ]
       },
       { path: 'students/addStudent', component: AddStudentFormComponent },
+      { path: 'registrations', component: RegistrationsComponent },
       { path: 'pricing', component: PricingComponent },
       { path: 'contact', component: ContactComponent },
       { path: 'identification', component: IdentificationComponent },

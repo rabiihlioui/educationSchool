@@ -14,6 +14,7 @@ export class ActiveMenuItemService implements OnInit {
   activeBlog: boolean
   activeTeachers: boolean
   activeStudents: boolean
+  activeRegistrations: boolean
   activeBookers: boolean
   activePricing: boolean
   activeContact: boolean
@@ -30,6 +31,7 @@ export class ActiveMenuItemService implements OnInit {
     this.activeBlog = false;
     this.activeTeachers = false;
     this.activeStudents = false;
+    this.activeRegistrations = false;
     this.activeBookers = false;
     this.activePricing = false;
     this.activeContact = false;
@@ -45,6 +47,7 @@ export class ActiveMenuItemService implements OnInit {
     this.activeBlog = false;
     this.activeTeachers = false;
     this.activeStudents = false;
+    this.activeRegistrations = false;
     this.activeBookers = false;
     this.activePricing = false;
     this.activeContact = false;
@@ -60,6 +63,7 @@ export class ActiveMenuItemService implements OnInit {
     this.activeBlog = false;
     this.activeTeachers = false;
     this.activeStudents = false;
+    this.activeRegistrations = false;
     this.activeBookers = false;
     this.activePricing = false;
     this.activeContact = false;
@@ -75,6 +79,7 @@ export class ActiveMenuItemService implements OnInit {
     this.activeBlog = false;
     this.activeTeachers = false;
     this.activeStudents = false;
+    this.activeRegistrations = false;
     this.activeBookers = false;
     this.activePricing = false;
     this.activeContact = false;
@@ -90,6 +95,7 @@ export class ActiveMenuItemService implements OnInit {
     this.activeBlog = false;
     this.activeTeachers = false;
     this.activeStudents = false;
+    this.activeRegistrations = false;
     this.activeBookers = false;
     this.activePricing = false;
     this.activeContact = false;
@@ -105,6 +111,7 @@ export class ActiveMenuItemService implements OnInit {
     this.activeBlog = false;
     this.activeTeachers = false;
     this.activeStudents = false;
+    this.activeRegistrations = false;
     this.activeBookers = false;
     this.activePricing = false;
     this.activeContact = false;
@@ -120,6 +127,7 @@ export class ActiveMenuItemService implements OnInit {
     this.activeBlog = false;
     this.activeTeachers = false;
     this.activeStudents = false;
+    this.activeRegistrations = false;
     this.activeBookers = false;
     this.activePricing = false;
     this.activeContact = false;
@@ -135,6 +143,7 @@ export class ActiveMenuItemService implements OnInit {
     this.activeBlog = true;
     this.activeTeachers = false;
     this.activeStudents = false;
+    this.activeRegistrations = false;
     this.activeBookers = false;
     this.activePricing = false;
     this.activeContact = false;
@@ -150,6 +159,7 @@ export class ActiveMenuItemService implements OnInit {
     this.activeBlog = false;
     this.activeTeachers = true;
     this.activeStudents = false;
+    this.activeRegistrations = false;
     this.activeBookers = false;
     this.activePricing = false;
     this.activeContact = false;
@@ -165,6 +175,23 @@ export class ActiveMenuItemService implements OnInit {
     this.activeBlog = false;
     this.activeTeachers = false;
     this.activeStudents = true;
+    this.activeRegistrations = false;
+    this.activeBookers = false;
+    this.activePricing = false;
+    this.activeContact = false;
+  }
+
+  activateRegistrations() {
+    this.activeHome = false;
+    this.activeAbout = false;
+    this.activeCourses = false;
+    this.activatemyCourses = false;
+    this.activatemyStudents = false;
+    this.activatemyTeachers = false;
+    this.activeBlog = false;
+    this.activeTeachers = false;
+    this.activeStudents = false;
+    this.activeRegistrations = true;
     this.activeBookers = false;
     this.activePricing = false;
     this.activeContact = false;
@@ -180,6 +207,7 @@ export class ActiveMenuItemService implements OnInit {
     this.activeBlog = false;
     this.activeTeachers = false;
     this.activeStudents = false;
+    this.activeRegistrations = false;
     this.activeBookers = true;
     this.activePricing = false;
     this.activeContact = false;
@@ -195,6 +223,7 @@ export class ActiveMenuItemService implements OnInit {
     this.activeBlog = false;
     this.activeTeachers = false;
     this.activeStudents = false;
+    this.activeRegistrations = false;
     this.activeBookers = false;
     this.activePricing = true;
     this.activeContact = false;
@@ -210,6 +239,7 @@ export class ActiveMenuItemService implements OnInit {
     this.activeBlog = false;
     this.activeTeachers = false;
     this.activeStudents = false;
+    this.activeRegistrations = false;
     this.activeBookers = false
     this.activePricing = false;
     this.activeContact = true;

@@ -1,0 +1,108 @@
+<div>
+    <div class="all-title-box">
+        <div class="container text-center">
+            <h1>Registrations<span class="m_1">Lorem Ipsum dolroin gravida nibh vel velit.</span></h1>
+        </div>
+    </div>
+
+    <div id="RegistrationsMenu" tabindex="-1"  aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-body customer-box">
+                     <ul class="nav nav-tabs">
+                        <li class="center" (click)="displayTeachers()">
+                            <a [ngClass]="{'active': activeTeachersTab}" class="centertext">
+                                Teachers
+                            </a>
+                        </li>
+                        <li class="center" (click)="displayStudents()">
+                            <a [ngClass]="{'active': activeStudentsTab}" class="centertext">
+                                Students
+                            </a>
+                        </li>
+                     </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Registrations" class="section wb">
+        <div class="container">
+            <div *ngIf="teachersRegistrationsFlag">
+                <table class="table table-striped table-dark">
+                    <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Identity Card</th>
+                            <th>Age</th>
+                            <!-- <th>Action</th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let teacherRegistration of teacherRegistrationsList">
+                            <td>{{teacherRegistration.firstname}}</td>
+                            <td>{{teacherRegistration.lastname}}</td>
+                            <td>{{teacherRegistration.email}}</td>
+                            <td>{{teacherRegistration.cin}}</td>
+                            <td>{{teacherRegistration.age}}</td>
+                            <!-- <td>
+                                <input type="image"
+                                       src="./assets/images/icons8-approval-50.png"
+                                       name="approveBtn"
+                                       id="approveBtn"
+                                       (click)="approveTeacherRegistration(teacherRegistration)"
+                                       style="margin-right: 20px;"/>
+                                <input type="image"
+                                       src="./assets/images/icons8-delete-50.png"
+                                       name="rejectBtn"
+                                       id="rejectBtn"
+                                       (click)="rejectTeacherRegistration(teacherRegistration)"/>
+                            </td> -->
+                        </tr>         
+                    </tbody>
+                </table>
+            </div>
+
+            <div *ngIf="studentsRegistrationsFlag">
+                <table class="table table-striped table-dark">
+                    <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Identity Card</th>
+                            <th>Age</th>
+                            <!-- <th>Action</th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let studentRegistration of studentRegistrationsList">
+                            <td>{{studentRegistration.firstname}}</td>
+                            <td>{{studentRegistration.lastname}}</td>
+                            <td>{{studentRegistration.email}}</td>
+                            <td>{{studentRegistration.cin}}</td>
+                            <td>{{studentRegistration.age}}</td>
+                            <!-- <td>
+                                <input type="image"
+                                       src="./assets/images/icons8-approval-50.png"
+                                       name="approveBtn"
+                                       id="approveBtn"
+                                       (click)="approveStudentRegistration(studentRegistration)"
+                                       style="margin-right: 20px;"/>
+                                <input type="image" 
+                                       src="./assets/images/icons8-delete-50.png"
+                                       name="rejectBtn"
+                                       id="rejectBtn"
+                                       (click)="rejectStudentRegistration(studentRegistration)"/>
+                            </td> -->
+                        </tr>         
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    

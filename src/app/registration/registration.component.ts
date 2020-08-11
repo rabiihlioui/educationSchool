@@ -49,13 +49,11 @@ export class RegistrationComponent implements OnInit {
   }
 
   registerStudent(student: Student) {
-    student.id = this.registrationService.registeredStudentsList[this.registrationService.registeredStudentsList.length - 1].id + 1;
-    this.registrationService.registeredStudentsList.push(student)
+    this.registrationService.registerStudent(student);
   }
 
   registerTeacher(teacher: Teacher) {
-    teacher.id = this.registrationService.registeredTeachersList[this.registrationService.registeredTeachersList.length - 1].id + 1;
-    this.registrationService.registeredTeachersList.push(teacher)
+    this.registrationService.registerTeacher(teacher);
   }
 
 }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ManageStudentsService } from './manage-students.service';
 import { ManageTeachersService } from './manage-teachers.service';
+import { RegistrationService } from './registration.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,8 +9,7 @@ import { ManageTeachersService } from './manage-teachers.service';
 export class AuthenticationService {
 
   constructor(
-    private manageStudentsService: ManageStudentsService,
-    private manageTeachersService: ManageTeachersService
+    private registrationService: RegistrationService
   ) { }
 
   authenticate(email, password) {
@@ -17,15 +17,16 @@ export class AuthenticationService {
       sessionStorage.setItem('authenticatedUser', 'adminUser');
     }
     else {
-      this.manageStudentsService.studentsList.forEach(student => {
+      this.registrationService.registeredStudentsList.forEach(student => {
         if (student.email == email && student.password == password)
           sessionStorage.setItem('authenticatedUser', 'studentUser');
       });
-      this.manageTeachersService.teachersList.forEach(teacher => {
+      this.registrationService.registeredTeachersList.forEach(teacher => {
         if (teacher.email == email && teacher.password == password)
           sessionStorage.setItem('authenticatedUser', 'teacherUser');
       });
     }
+    sessionStorage.setItem('userEmail', email);
   }
 
   isUserLoggedIn() {
@@ -34,7 +35,8 @@ export class AuthenticationService {
   }
 
   logout() {
-    sessionStorage.removeItem('authenticatedUser')
+    sessionStorage.removeItem('authenticatedUser');
+    sessionStorage.removeItem('userEmail');
   }
 
   isUserAdmin() {
@@ -50,6 +52,11 @@ export class AuthenticationService {
   isUserStudent() {
     let user = sessionStorage.getItem('authenticatedUser')
     return (user === 'studentUser')
+  }
+
+  getUserEmailFromSession() {
+    // return sessionStorage.getItem('userEmail');
+    console.log(sessionStorage.getItem('userEmail'))
   }
 
 }

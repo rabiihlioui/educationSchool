@@ -25,22 +25,27 @@
         <li><i class="fa fa-book" aria-hidden="true"></i> {{course.numberOfBooks}} Books</li>
     </ul>
 </div>
-<div class="course-meta-bot">
+<div class="course-meta-bot" *ngIf="authenticationService.isUserLoggedIn()">
     <ul>
-        <li>
+        <li *ngIf="authenticationService.isUserAdmin()">
             <button type="button"
                     class="btn btn-outline-success"
-                    *ngIf="authenticationService.isUserAdmin()"
                     routerLink="editCourse/{{course.id}}">
                 Edit
             </button>
         </li>
-        <li>
+        <li *ngIf="authenticationService.isUserAdmin()">
             <button type="button"
                     class="btn btn-outline-danger"
-                    *ngIf="authenticationService.isUserAdmin()"
                     (click)="deleteCourse()">
                 Delete
+            </button>
+        </li>
+        <li *ngIf="authenticationService.isUserTeacher() || authenticationService.isUserStudent()">
+            <button type="button"
+                    class="btn btn-outline-danger btn-lg"
+                    (click)="bookCourse(course)">
+                Book
             </button>
         </li>
     </ul>

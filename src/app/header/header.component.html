@@ -50,6 +50,11 @@
                         <a class="nav-link" (click)="activeMenuItemService.activateStudents()" routerLink="/students">Students</a>
                     </li>
                     <li class="nav-item"
+                        [ngClass]="{'active': activeMenuItemService.activeRegistrations}"
+                        *ngIf="authenticationService.isUserAdmin()">
+                        <a class="nav-link" (click)="activeMenuItemService.activateRegistrations()" routerLink="/registrations">Registrations</a>
+                    </li>
+                    <li class="nav-item"
                         [ngClass]="{'active': activeMenuItemService.activeBookers}"
                         *ngIf="authenticationService.isUserAdmin()">
                         <a class="nav-link" (click)="activeMenuItemService.activateBookers()" routerLink="/bookers">Bookers</a>
