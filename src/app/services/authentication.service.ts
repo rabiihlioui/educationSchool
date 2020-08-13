@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { ManageStudentsService } from './manage-students.service';
 import { ManageTeachersService } from './manage-teachers.service';
 import { RegistrationService } from './registration.service';
+import { ActiveMenuItemService } from './active-menu-item.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,8 @@ import { RegistrationService } from './registration.service';
 export class AuthenticationService {
 
   constructor(
-    private registrationService: RegistrationService
+    private registrationService: RegistrationService,
+    private activeMenuItemService: ActiveMenuItemService
   ) { }
 
   authenticate(email, password) {
@@ -37,6 +39,7 @@ export class AuthenticationService {
   logout() {
     sessionStorage.removeItem('authenticatedUser');
     sessionStorage.removeItem('userEmail');
+    this.activeMenuItemService.deactivateAllMenuWhenLogout();
   }
 
   isUserAdmin() {

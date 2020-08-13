@@ -244,4 +244,20 @@ export class ActiveMenuItemService implements OnInit {
     this.activePricing = false;
     this.activeContact = true;
   }
+
+  deactivateAllMenuWhenLogout() {
+    this.activeHome = false;
+    this.activeAbout = false;
+    this.activeCourses = false;
+    this.activatemyCourses = false;
+    this.activatemyStudents = false;
+    this.activatemyTeachers = false;
+    this.activeBlog = false;
+    this.activeTeachers = false;
+    this.activeStudents = false;
+    this.activeRegistrations = false;
+    this.activeBookers = false
+    this.activePricing = false;
+    this.activeContact = false;
+  }
 }
