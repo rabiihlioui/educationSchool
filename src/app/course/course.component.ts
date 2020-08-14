@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { ManageCoursesService } from '../services/manage-courses.service';
 import { Course } from '../classes/course';
 import { AuthenticationService } from '../services/authentication.service';
@@ -9,7 +9,7 @@ import { BookingService } from '../services/booking.service';
   templateUrl: './course.component.html',
   styleUrls: ['./course.component.css']
 })
-export class CourseComponent implements OnInit {
+export class CourseComponent implements OnInit{
 
   @Input() course: Course
 
@@ -20,6 +20,7 @@ export class CourseComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.bookingService.bookedCourse(this.course);
   }
 
   deleteCourse() {

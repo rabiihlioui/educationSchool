@@ -7,10 +7,10 @@ import { Student } from '../classes/student';
 export class ManageStudentsService {
 
   studentsList = [
-    new Student(1, 'Rabii', 'Hlioui', 'rabiihlioui@gmail.com', 'rabiipass', 'Engineering', 12345678, 100, '../assets/images/student-01.png'),
-    new Student(2, 'Beji', 'Matrix', 'bejimatrix@hotmail.com', 'khantouch123', 'Web Design', 96542381, 45, '../assets/images/student-02.png'),
-    new Student(3, 'Sofien', 'Arbi', 'arbi.sofien@gmail.com', 'ArbiSofienXYZ', 'Angular', 78451203, 23, '../assets/images/student-03.png'),
-    new Student(4, 'Walid', 'Zamouri', 'zamouri00@yahoo.fr', 'zamouriwd1965', 'Hotel Management', 14875631, 55, '../assets/images/student-04.png')
+    new Student(1, 'Rabii', 'Hlioui', 'rabiihlioui@gmail.com', 'rabiipass', 'Programming', 12345678, 100, '../assets/images/student-01.png'),
+    new Student(2, 'Beji', 'Matrix', 'bejimatrix@hotmail.com', 'khantouch123', 'Art & Design', 96542381, 45, '../assets/images/student-02.png'),
+    new Student(3, 'Sofien', 'Arbi', 'arbi.sofien@gmail.com', 'ArbiSofienXYZ', 'Humanities', 78451203, 23, '../assets/images/student-03.png'),
+    new Student(4, 'Walid', 'Zamouri', 'zamouri00@yahoo.fr', 'zamouriwd1965', 'Business', 14875631, 55, '../assets/images/student-04.png')
   ]
 
   constructor() { }

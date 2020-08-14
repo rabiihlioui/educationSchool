@@ -6,13 +6,15 @@ export class Course {
     maxStudent: number;
     numberOfBooks: number;
     photoPath: string;
+    bookedMsg: string;
     constructor(id: number = 0,
                 course: string = '',
                 description: string = '',
                 period: number = 0,
                 maxStudent: number = 0,
                 numberOfBooks: number = 0,
-                photoPath: string = '') {
+                photoPath: string = '',
+                bookedMsg: string = '') {
       this.id = id;
       this.course = course;
       this.description = description;
@@ -20,5 +22,6 @@ export class Course {
       this.maxStudent = maxStudent;
       this.numberOfBooks = numberOfBooks;
       this.photoPath = photoPath;
+      this.bookedMsg = bookedMsg;
     }
 }

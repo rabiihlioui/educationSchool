@@ -7,10 +7,10 @@ import { Teacher } from '../classes/teacher';
 export class ManageTeachersService {
 
   teachersList = [
-    new Teacher(1, 'Emilia', 'Clark', 'emiliaclark@gmail.com', 'emilia', 'Web Developpment', 96458712, 50, '../assets/images/team-01.png'),
-    new Teacher(2, 'Kristina', 'Black', 'black.kristina@hotmail.com', 'black', 'Hotel Management', 96458712, 50, '../assets/images/team-02.png'),
-    new Teacher(3, 'Steve', 'Thomas', 'thomassteve@yahoo.fr', 'freud', 'Angular', 96458712, 50, '../assets/images/team-03.png'),
-    new Teacher(4, 'zeineb', 'Labyedh', 'zeinebLabyedh@gmail.com', 'freud', 'JSF', 96458712, 50, '../assets/images/team-04.png')
+    new Teacher(1, 'Emilia', 'Clark', 'emiliaclark@gmail.com', 'emilia', 'Computer Science', 96458712, 50, '../assets/images/team-01.png'),
+    new Teacher(2, 'Kristina', 'Black', 'black.kristina@hotmail.com', 'black', 'Programming', 96458712, 50, '../assets/images/team-02.png'),
+    new Teacher(3, 'Steve', 'Thomas', 'thomassteve@yahoo.fr', 'freud', 'Humanities', 96458712, 50, '../assets/images/team-03.png'),
+    new Teacher(4, 'zeineb', 'Labyedh', 'zeinebLabyedh@gmail.com', 'freud', 'Health & Medicine', 96458712, 50, '../assets/images/team-04.png')
   ]
 
   constructor() { }

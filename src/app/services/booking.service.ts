@@ -6,6 +6,7 @@ import { ManageStudentsService } from './manage-students.service';
 import { Course } from '../classes/course';
 import { RegistrationService } from './registration.service';
 import { AuthenticationService } from './authentication.service';
+import { ManageCoursesService } from './manage-courses.service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,24 +18,25 @@ export class BookingService {
   teacher: Teacher;
 
   studentBookersList = [
-    new Student(1, 'Rabii', 'Hlioui', 'rabiihlioui@gmail.com', 'rabiipass', 'Web Developpment', 12345678, 100, '../assets/images/student-01.png'),
-    new Student(2, 'Beji', 'Matrix', 'bejimatrix@hotmail.com', 'khantouch123', 'Web Design', 96542381, 45, '../assets/images/student-02.png'),
-    new Student(3, 'Sofien', 'Arbi', 'arbi.sofien@gmail.com', 'ArbiSofienXYZ', 'Angular', 78451203, 23, '../assets/images/student-03.png'),
-    new Student(4, 'Walid', 'Zamouri', 'zamouri00@yahoo.fr', 'zamouriwd1965', 'JSF', 14875631, 55, '../assets/images/student-04.png')
+    new Student(1, 'Rabii', 'Hlioui', 'rabiihlioui@gmail.com', 'rabiipass', 'Programming', 12345678, 100, '../assets/images/student-01.png'),
+    new Student(2, 'Beji', 'Matrix', 'bejimatrix@hotmail.com', 'khantouch123', 'Art & Design', 96542381, 45, '../assets/images/student-02.png'),
+    new Student(3, 'Sofien', 'Arbi', 'arbi.sofien@gmail.com', 'ArbiSofienXYZ', 'Humanities', 78451203, 23, '../assets/images/student-03.png'),
+    new Student(4, 'Walid', 'Zamouri', 'zamouri00@yahoo.fr', 'zamouriwd1965', 'Business', 14875631, 55, '../assets/images/student-04.png')
   ];
 
   teacherBookersList = [
-    new Teacher(1, 'Emilia', 'Clark', 'emiliaclark@gmail.com', 'emilia', 'Web Developpment', 96458712, 50, '../assets/images/team-01.png'),
-    new Teacher(2, 'Kristina', 'Black', 'black.kristina@hotmail.com', 'black', 'Web Design', 96458712, 50, '../assets/images/team-02.png'),
-    new Teacher(3, 'Steve', 'Thomas', 'thomassteve@yahoo.fr', 'freud', 'Angular', 96458712, 50, '../assets/images/team-03.png'),
-    new Teacher(4, 'zeineb', 'Labyedh', 'zeinebLabyedh@gmail.com', 'freud', 'JSF', 96458712, 50, '../assets/images/team-04.png')
+    new Teacher(1, 'Emilia', 'Clark', 'emiliaclark@gmail.com', 'emilia', 'Computer Science', 96458712, 50, '../assets/images/team-01.png'),
+    new Teacher(2, 'Kristina', 'Black', 'black.kristina@hotmail.com', 'black', 'Programming', 96458712, 50, '../assets/images/team-02.png'),
+    new Teacher(3, 'Steve', 'Thomas', 'thomassteve@yahoo.fr', 'freud', 'Humanities', 96458712, 50, '../assets/images/team-03.png'),
+    new Teacher(4, 'zeineb', 'Labyedh', 'zeinebLabyedh@gmail.com', 'freud', 'Health & Medicine', 96458712, 50, '../assets/images/team-04.png')
   ]
 
   constructor(
     private manageTeachersService: ManageTeachersService,
     private manageStudentsService: ManageStudentsService,
     private registrationService: RegistrationService,
-    private authenticationService: AuthenticationService
+    private authenticationService: AuthenticationService,
+    private manageCoursesService: ManageCoursesService
   ) { }
 
   approveTeacherBooker(teacher: Teacher) {
@@ -66,39 +68,67 @@ export class BookingService {
   bookCourse(course: Course) {
     let userType = this.authenticationService.getUserTypeFromSession();
     let userEmail = this.authenticationService.getUserEmailFromSession();
-    if (userType = 'studentUser') {
-      for (let i = 0; i < this.manageStudentsService.studentsList.length; i++) {
-        const stud = this.manageStudentsService.studentsList[i];
-        if (userEmail == stud.email) {
-          this.bookingWarning = 'You\'ve already booked this course';
-        }
-        else {
-          this.registrationService.registeredStudentsList.forEach(regisStud => {
-            if (regisStud.email == userEmail)
-              this.student = regisStud;
-          });
-          this.student.occupation = course.course;
-          this.studentBookersList.push(this.student);
-          break;
-        }
-      }
+    if (userType == 'studentUser') {
+      this.registrationService.registeredStudentsList.forEach(regisStud => {
+        if (regisStud.email == userEmail)
+          this.student = new Student(regisStud.id,regisStud.firstname, regisStud.lastname, regisStud.email,regisStud.password,regisStud.occupation,regisStud.cin, regisStud.age,regisStud.photoPath);
+      });
+      this.student.occupation = course.course;
+      this.studentBookersList.push(this.student);
+      this.bookedCourse(course);
     }
     else {
-      for (let i = 0; i < this.manageTeachersService.teachersList.length; i++) {
-        const teach = this.manageTeachersService.teachersList[i];
-        if (userEmail == teach.email)
-          this.bookingWarning = 'You\'ve already booked this course';
-        else {
-          this.registrationService.registeredTeachersList.forEach(regisTeach => {
-            if (regisTeach.email == userEmail)
-              this.teacher = regisTeach;
-          });
-          this.teacher.occupation = course.course;
-          this.teacherBookersList.push(this.teacher);
-          break;
-        }
-      }
+      this.registrationService.registeredTeachersList.forEach(regisTeach => {
+        if (regisTeach.email == userEmail)
+          this.teacher = new Teacher(regisTeach.id,regisTeach.firstname, regisTeach.lastname, regisTeach.email,regisTeach.password,regisTeach.occupation,regisTeach.cin, regisTeach.age,regisTeach.photoPath);
+      });
+      this.teacher.occupation = course.course;
+      this.teacherBookersList.push(this.teacher);
+      this.bookedCourse(course);
     }
+  }
+
+  bookedCourse(course: Course) {
+    let userType = this.authenticationService.getUserTypeFromSession();
+    let userEmail = this.authenticationService.getUserEmailFromSession();
+    if (userType == 'studentUser') {
+      this.studentBookersList.forEach(student => {
+        if (userEmail == student.email) {
+          if (course.course == student.occupation) {
+            course.bookedMsg = 'Booked';
+          }
+        }
+      });
+      this.manageStudentsService.studentsList.forEach(student => {
+        if (userEmail == student.email) {
+          if (course.course == student.occupation) {
+            course.bookedMsg = 'Studying';
+          }
+        }
+      });
+    }
+    else {
+      this.teacherBookersList.forEach(teacher => {
+        if (userEmail == teacher.email) {
+          if (course.course == teacher.occupation) {
+            course.bookedMsg = 'Booked';
+          }
+        }
+      });
+      this.manageTeachersService.teachersList.forEach(teacher => {
+        if (userEmail == teacher.email) {
+          if (course.course == teacher.occupation) {
+            course.bookedMsg = 'Teaching';
+          }
+        }
+      });
+    }
+  }
+
+  unbookUsersCourses() {
+    this.manageCoursesService.coursesList.forEach(course => {
+      course.bookedMsg = '';
+    });
   }
 
 }
