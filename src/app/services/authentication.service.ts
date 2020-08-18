@@ -15,7 +15,7 @@ export class AuthenticationService {
   ) { }
 
   authenticate(email, password) {
-    if(email === 'admin@creator.com' && password === 'admin') {
+    if(email === 'creator@creator.com' && password === 'creator') {
       sessionStorage.setItem('authenticatedUser', 'adminUser');
     }
     else {

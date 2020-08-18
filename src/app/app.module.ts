@@ -33,6 +33,7 @@ import { StudentComponent } from './student/student.component';
 import { EditStudentFormComponent } from './edit-student-form/edit-student-form.component';
 import { AddStudentFormComponent } from './add-student-form/add-student-form.component';
 import { RegistrationsComponent } from './registrations/registrations.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,7 @@ import { RegistrationsComponent } from './registrations/registrations.component'
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -24,6 +24,7 @@ import { EditTeacherFormComponent } from './edit-teacher-form/edit-teacher-form.
 import { EditStudentFormComponent } from './edit-student-form/edit-student-form.component';
 import { AddStudentFormComponent } from './add-student-form/add-student-form.component';
 import { RegistrationsComponent } from './registrations/registrations.component';
+import { RouterGuardService } from './services/router-guard.service';
 
 const routes: Routes = [
   { 
@@ -43,14 +44,15 @@ const routes: Routes = [
         ]
       },
       { path: 'courses/addCourse', component: CourseFormComponent },
-      { path: 'myCourses', component: MyCoursesComponent },
-      { path: 'myStudents', component: MyStudentsComponent },
-      { path: 'myTeachers', component: MyTeachersComponent },
-      { path: 'bookers', component: BookersComponent },
+      { path: 'myCourses', component: MyCoursesComponent, canActivate: [RouterGuardService] },
+      { path: 'myStudents', component: MyStudentsComponent, canActivate: [RouterGuardService] },
+      { path: 'myTeachers', component: MyTeachersComponent, canActivate: [RouterGuardService] },
+      { path: 'bookers', component: BookersComponent, canActivate: [RouterGuardService] },
       { path: 'blog', component: BlogComponent },
       { 
         path: 'teachers',
         component: TeachersComponent,
+        canActivate: [RouterGuardService],
         children:
         [
           { path: 'editTeacher/:teacherId', component: EditTeacherFormComponent }
@@ -60,13 +62,14 @@ const routes: Routes = [
       { 
         path: 'students', 
         component: StudentsComponent,
+        canActivate: [RouterGuardService],
         children:
         [
           { path: 'editStudent/:studentId', component: EditStudentFormComponent }
         ]
       },
       { path: 'students/addStudent', component: AddStudentFormComponent },
-      { path: 'registrations', component: RegistrationsComponent },
+      { path: 'registrations', component: RegistrationsComponent, canActivate: [RouterGuardService] },
       { path: 'pricing', component: PricingComponent },
       { path: 'contact', component: ContactComponent },
       { path: 'identification', component: IdentificationComponent },
