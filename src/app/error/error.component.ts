@@ -8,8 +8,6 @@ import { ActiveMenuItemService } from '../services/active-menu-item.service';
 })
 export class ErrorComponent implements OnInit {
 
-  //errorMessage = 'An ERROR OCCURED! Contact Support at *** - ***'
-
   constructor(
     public activeMenuItemService: ActiveMenuItemService
   ) { }

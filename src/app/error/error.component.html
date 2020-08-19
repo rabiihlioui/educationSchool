@@ -1,9 +1,14 @@
-<div>
-  <h4>
-    Click on the button to go back to the Home page
-  </h4>
-  <a [ngClass]="{'active': activeMenuItemService.activeHome}" (click)="activeMenuItemService.activateHome()"
-    routerLink='/home' class="btn btn-danger btn-lg active" role="button" aria-pressed="true">
-    Back To Home Page
-  </a>
+<div id="notfound">
+	<div class="notfound">
+		<div class="notfound-404">
+			<div></div>
+			<h1>404</h1>
+		</div>
+		<h2>Page not found</h2>
+		<p>The page you are looking for might have been removed had its name changed or is temporarily unavailable.</p>
+    <a [ngClass]="{'active': activeMenuItemService.activeHome}" (click)="activeMenuItemService.activateHome()"
+       routerLink='/home' class="btn btn-danger btn-lg active" role="button" aria-pressed="true">
+      Back To Home Page
+    </a>
+	</div>
 </div>
