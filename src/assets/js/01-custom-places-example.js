@@ -8,7 +8,7 @@ function runExample3() {
 				autoShow: true,
 				lat: 53.79,
 				lng:-1.5426760000000286,
-				name: "SmartNESS",
+				name: "NoLimits",
 				street: "Over the rainbow, Up high way",
 				userData: 99
 			}
