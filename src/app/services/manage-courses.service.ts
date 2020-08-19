@@ -7,13 +7,27 @@ import { Course } from '../classes/course';
 export class ManageCoursesService {
 
   coursesList = [
-    new Course(1, 'Art & Design', 'Lorem ipsum door sit amet, fugiat deicata avise id cum, no quo maiorum intel ogrets geuiat operts elicata libere avisse id cumlegebat, liber regione eu sit.... ', 6, 40, 7, '../assets/images/blog_1.jpg'),
-    new Course(2, 'Business', 'Lorem ipsum door sit amet, fugiat deicata avise id cum, no quo maiorum intel ogrets geuiat operts elicata libere avisse id cumlegebat, liber regione eu sit.... ', 6, 40, 7, '../assets/images/blog_2.jpg'),
-    new Course(3, 'Computer Science', 'Lorem ipsum door sit amet, fugiat deicata avise id cum, no quo maiorum intel ogrets geuiat operts elicata libere avisse id cumlegebat, liber regione eu sit.... ', 6, 40, 7, '../assets/images/blog_3.jpg'),
-    new Course(4, 'Health & Medicine', 'Lorem ipsum door sit amet, fugiat deicata avise id cum, no quo maiorum intel ogrets geuiat operts elicata libere avisse id cumlegebat, liber regione eu sit.... ', 6, 40, 7, '../assets/images/blog_4.jpg'),
-    new Course(5, 'Humanities', 'Lorem ipsum door sit amet, fugiat deicata avise id cum, no quo maiorum intel ogrets geuiat operts elicata libere avisse id cumlegebat, liber regione eu sit.... ', 6, 40, 7, '../assets/images/blog_5.jpg'),
-    new Course(6, 'Mathematics', 'Lorem ipsum door sit amet, fugiat deicata avise id cum, no quo maiorum intel ogrets geuiat operts elicata libere avisse id cumlegebat, liber regione eu sit.... ', 6, 40, 7, '../assets/images/blog_6.jpg'),
-    new Course(7, 'Programming', 'Lorem ipsum door sit amet, fugiat deicata avise id cum, no quo maiorum intel ogrets geuiat operts elicata libere avisse id cumlegebat, liber regione eu sit.... ', 6, 40, 7, '../assets/images/blog_7.jpg')
+    new Course(1, 'Art & Design',
+            'To study art and design is to examine the human condition, interpret it, and then share your view through any number of mediums including, but not limited to, architecture, graphic design, painting, sculpture ....',
+            6, 40, 7, '../assets/images/blog_1.jpg'),
+    new Course(2, 'Business',
+            'An undergraduate business program educates students on the fundamentals they need in order to become business leaders and successful careerists, regardless of the specific career grads find themselves in.',
+            6, 40, 7, '../assets/images/blog_2.jpg'),
+    new Course(3, 'Computer Science',
+            'We offer a range of qualifications in computing. We believe our computing degrees are popular worldwide because we offer excellent tutors and teaching methods – plus outstanding flexibility and accessibility.',
+            6, 40, 7, '../assets/images/blog_3.jpg'),
+    new Course(4, 'Health & Medicine',
+            'A successful healthcare system relies on a the coordinated efforts of many professionals. Doctors, specialists, nurses, and individuals not directly involved in the delivery of healthcare ....',
+            6, 40, 7, '../assets/images/blog_4.jpg'),
+    new Course(5, 'Humanities',
+            'Humanities studies the history and development of human thought and culture. By focusing on several topics, humanities courses seek a broad and interconnected understanding of the human experience. ',
+            6, 40, 7, '../assets/images/blog_5.jpg'),
+    new Course(6, 'Mathematics',
+            'This course offers students new insights into important and widely used mathematical concepts, with a strong focus on numerical and algebraic relationships.... ',
+            6, 40, 7, '../assets/images/blog_6.jpg'),
+    new Course(7, 'Programming',
+            'Computer programming courses focus on helping students develop an understanding of computer networks, operating systems, algorithms, database systems and web design....',
+            6, 40, 7, '../assets/images/blog_7.jpg')
   ]
 
   constructor() { }
