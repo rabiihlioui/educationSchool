@@ -10,6 +10,10 @@ import { Router } from '@angular/router';
 })
 export class AddTeacherFormComponent implements OnInit {
 
+  cinPattern = "^((\\+91-?)|0)?[0-9]{8}$";
+
+  agePattern = "^((\\+91-?)|0)?[0-9]{2}$";
+
   constructor(
     private manageTeachersService: ManageTeachersService,
     private router: Router

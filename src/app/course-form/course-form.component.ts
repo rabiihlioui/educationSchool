@@ -11,6 +11,10 @@ import { Router } from '@angular/router';
 })
 export class CourseFormComponent implements OnInit {
 
+  periodPattern = "^((\\+91-?)|0)?[0-9]{1}$";
+  booksPattern = "^((\\+91-?)|0)?[0-9]{1}$";
+  studentsPattern = "^((\\+91-?)|0)?[0-9]{2}$";
+
   constructor(
     private manageCoursesService: ManageCoursesService,
     private router: Router

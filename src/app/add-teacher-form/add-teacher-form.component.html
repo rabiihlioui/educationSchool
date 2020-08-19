@@ -9,87 +9,168 @@
                     <form #addTeacherForm="ngForm">
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                              <label for="firstname">FirstName</label>
-                              <input #firstname="ngModel"
-                                     type="text"
-                                     class="form-control"
-                                     name="firstname"
-                                     id="firstname"
-                                     aria-describedby="firstname"
-                                     placeholder="Enter Teacher First Name"
-                                     ngModel
-                                     required>
+                                <label for="firstname">First Name</label>
+                                <input #firstname="ngModel"
+                                       type="text"
+                                       class="form-control"
+                                       name="firstname"
+                                       id="firstname"
+                                       aria-describedby="firstname"
+                                       placeholder="Enter Teacher First Name"
+                                       minlength="3"
+                                       maxlength="15"
+                                       ngModel
+                                       required>
+                                <div
+                                    class="alert alert-danger"
+                                    *ngIf="firstname.invalid && firstname.touched"
+                                >
+                                    <div *ngIf="firstname.errors.required">
+                                        First Name is required.
+                                    </div>
+                                    <div *ngIf="firstname.errors.minlength">
+                                        First Name must be at least 3 characters long.
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-group col-md-6">
-                              <label for="lastname">LastName</label>
-                              <input #lastname="ngModel"
-                                     type="text"
-                                     class="form-control"
-                                     name="lastname"
-                                     id="lastname"
-                                     aria-describedby="lastname"
-                                     placeholder="Enter Teacher Last Name"
-                                     ngModel
-                                     required>
+                                <label for="lastname">Last Name</label>
+                                <input #lastname="ngModel"
+                                       type="text"
+                                       class="form-control"
+                                       name="lastname"
+                                       id="lastname"
+                                       aria-describedby="lastname"
+                                       placeholder="Enter Teacher Last Name"
+                                       minlength="3"
+                                       maxlength="15"
+                                       ngModel
+                                       required>
+                                <div
+                                    class="alert alert-danger"
+                                    *ngIf="lastname.invalid && lastname.touched"
+                                >
+                                    <div *ngIf="lastname.errors.required">
+                                        Last Name is required.
+                                    </div>
+                                    <div *ngIf="lastname.errors.minlength">
+                                        Last Name must be at least 3 characters long.
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                              <label for="email">Email</label>
-                              <input #email="ngModel"
-                                     class="form-control"
-                                     name="email"
-                                     id="email"
-                                     placeholder="Enter Email"
-                                     email
-                                     ngModel
-                                     required>
+                                <label for="email">Email</label>
+                                <input #email="ngModel"
+                                       class="form-control"
+                                       name="email"
+                                       id="email"
+                                       placeholder="Enter Email"
+                                       email
+                                       ngModel
+                                       required>
+                                <div
+                                    class="alert alert-danger"
+                                    *ngIf="email.invalid && email.touched"
+                                >
+                                    Invalid Email, example foulen@domain
+                                </div>
                             </div>
                             <div class="form-group col-md-6">
-                              <label for="password">Password</label>
-                              <input #password="ngModel"
-                                     type="password"
-                                     class="form-control"
-                                     name="password"
-                                     id="password"
-                                     placeholder="Enter Password"
-                                     ngModel
-                                     required>
+                                <label for="password">Password</label>
+                                <input #password="ngModel"
+                                        type="password"
+                                        class="form-control"
+                                        name="password"
+                                        id="password"
+                                        placeholder="Enter Password"
+                                        minlength="5"
+                                        ngModel
+                                        required>
+                                <div
+                                    class="alert alert-danger"
+                                    *ngIf="password.invalid && password.touched"
+                                >
+                                    <div *ngIf="password.errors.required">
+                                        Password is required.
+                                    </div>
+                                    <div *ngIf="password.errors.minlength">
+                                        Password must be at least 5 characters long.
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
-                          <label for="occupation">Occupation</label>
-                          <input #occupation="ngModel"
-                                 type="text"
-                                 class="form-control"
-                                 name="occupation"
-                                 id="occupation"
-                                 placeholder="Enter Occupation"
-                                 ngModel
-                                 required>
+                            <label for="occupation">Occupation</label>
+                            <input #occupation="ngModel"
+                                   type="text"
+                                   class="form-control"
+                                   name="occupation"
+                                   id="occupation"
+                                   placeholder="Enter Occupation"
+                                   minlength="5"
+                                   maxlength="30"
+                                   ngModel
+                                   required>
+                            <div
+                                class="alert alert-danger"
+                                *ngIf="occupation.invalid && occupation.touched"
+                            >
+                                <div *ngIf="occupation.errors.required">
+                                    Occupation is required.
+                                </div>
+                                <div *ngIf="occupation.errors.minlength">
+                                    Occupation must be at least 5 characters long.
+                                </div>
+                            </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                              <label for="cin">Identity Card Number</label>
-                              <input #cin="ngModel"
-                                     type="number"
-                                     class="form-control"
-                                     name="cin"
-                                     id="cin"
-                                     placeholder="Enter Identity Card Number"
-                                     ngModel
-                                     required>
+                                <label for="cin">Identity Card Number</label>
+                                <input #cin="ngModel"
+                                       type="number"
+                                       class="form-control"
+                                       name="cin"
+                                       id="cin"
+                                       placeholder="Enter Identity Card Number"
+                                       [pattern]="cinPattern"
+                                       ngModel
+                                       required>
+                                <div
+                                    class="alert alert-danger"
+                                    *ngIf="cin.invalid && cin.touched"
+                                >
+                                    <div *ngIf="cin.errors.required">
+                                        Identity Card is required.
+                                    </div>
+                                    <div *ngIf="cin.errors.pattern">
+                                        Identity Card must be 8 characters long.
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-group col-md-6">
-                              <label for="age">Age</label>
-                              <input #age="ngModel"
-                                     type="number"
-                                     class="form-control"
-                                     name="age"
-                                     id="age"
-                                     placeholder="Enter Age"
-                                     ngModel
-                                     required>
+                                <label for="age">Age</label>
+                                <input #age="ngModel"
+                                       type="number"
+                                       class="form-control"
+                                       name="age"
+                                       id="age"
+                                       placeholder="Enter Age"
+                                       [pattern]="agePattern"
+                                       ngModel
+                                       required>
+                                <div
+                                    class="alert alert-danger"
+                                    *ngIf="age.invalid && age.touched"
+                                >
+                                    <div *ngIf="age.errors.required">
+                                        Age is required.
+                                    </div>
+                                    <div *ngIf="age.errors.pattern">
+                                        Age must be 10 and 99 years old.
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <button 

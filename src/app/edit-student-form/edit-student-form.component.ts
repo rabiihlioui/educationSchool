@@ -14,6 +14,10 @@ export class EditStudentFormComponent implements OnInit {
 
   editedStudent: Student
 
+  cinPattern = "^((\\+91-?)|0)?[0-9]{8}$";
+
+  agePattern = "^((\\+91-?)|0)?[0-9]{2}$";
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private manageStudentsService: ManageStudentsService,

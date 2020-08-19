@@ -9,8 +9,21 @@
                     placeholder="First Name"
                     type="text"
                     name="firstname"
+                    minlength="3"
+                    maxlength="15"
                     ngModel
                     required>
+                <div
+                    class="alert alert-danger"
+                    *ngIf="firstname.invalid && firstname.touched"
+                >
+                    <div *ngIf="firstname.errors.required">
+                        First Name is required.
+                    </div>
+                    <div *ngIf="firstname.errors.minlength">
+                        First Name must be at least 3 characters long.
+                    </div>
+                </div>
             </div>
         </div>
         <div class="form-group">
@@ -22,8 +35,21 @@
                     placeholder="Last Name"
                     type="text"
                     name="lastname"
+                    minlength="3"
+                    maxlength="15"
                     ngModel
                     required>
+                <div
+                    class="alert alert-danger"
+                    *ngIf="lastname.invalid && lastname.touched"
+                >
+                    <div *ngIf="lastname.errors.required">
+                        Last Name is required.
+                    </div>
+                    <div *ngIf="lastname.errors.minlength">
+                        Last Name must be at least 3 characters long.
+                    </div>
+                </div>
             </div>
         </div>
         <div class="form-group">
@@ -37,6 +63,12 @@
                     email
                     ngModel
                     required>
+                <div
+                    class="alert alert-danger"
+                    *ngIf="email.invalid && email.touched"
+                >
+                    Invalid Email, example foulen@domain
+                </div>
             </div>
         </div>
         <div class="form-group">
@@ -51,6 +83,17 @@
                     minlength="5"
                     ngModel
                     required>
+                <div
+                    class="alert alert-danger"
+                    *ngIf="password.invalid && password.touched"
+                >
+                    <div *ngIf="password.errors.required">
+                        Password is required.
+                    </div>
+                    <div *ngIf="password.errors.minlength">
+                        Password must be at least 5 characters long.
+                    </div>
+                </div>
             </div>
         </div>
         <div class="form-group">
@@ -62,10 +105,20 @@
                     placeholder="Identity Card"
                     type="number"
                     name="cin"
-                    min="8"
-                    max="8"
+                    [pattern]="cinPattern"
                     ngModel
                     required>
+                <div
+                    class="alert alert-danger"
+                    *ngIf="cin.invalid && cin.touched"
+                >
+                    <div *ngIf="cin.errors.required">
+                        Identity Card is required.
+                    </div>
+                    <div *ngIf="cin.errors.pattern">
+                        Identity Card must be 8 characters long.
+                    </div>
+                </div>
             </div>
         </div>
         <div class="form-group">
@@ -76,11 +129,21 @@
                     id="age"
                     placeholder="Age"
                     type="number"
-                    name="cin"
-                    min="2"
-                    max="2"
+                    name="age"
+                    [pattern]="agePattern"
                     ngModel
                     required>
+                <div
+                    class="alert alert-danger"
+                    *ngIf="age.invalid && age.touched"
+                >
+                    <div *ngIf="age.errors.required">
+                        Age is required.
+                    </div>
+                    <div *ngIf="age.errors.pattern">
+                        Age must be 10 and 99 years old.
+                    </div>
+                </div>
             </div>
         </div>
         <div class="form-group" style="margin-left: 16px; margin-right: 16px;">
@@ -109,6 +172,14 @@
                         required>
                     Teacher
                 </label>
+            </div>
+            <div
+                class="alert alert-danger"
+                *ngIf="status.invalid && status.touched"
+            >
+                <div *ngIf="status.errors.required">
+                    Status is required.
+                </div>
             </div>
         </div>
         <div class="row">							

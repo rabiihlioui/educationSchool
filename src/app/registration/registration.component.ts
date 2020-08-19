@@ -15,6 +15,10 @@ export class RegistrationComponent implements OnInit {
 
   selectedStatus: boolean
 
+  cinPattern = "^((\\+91-?)|0)?[0-9]{8}$";
+
+  agePattern = "^((\\+91-?)|0)?[0-9]{2}$";
+
   constructor(
     private registrationService: RegistrationService,
     private authenticationService: AuthenticationService,

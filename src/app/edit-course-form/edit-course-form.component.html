@@ -8,54 +8,116 @@
                 <div class="tab-content">
                     <form #editCourseForm="ngForm">
                         <div class="form-group">
-                          <label for="coursename">Course Name</label>
-                          <input #coursename="ngModel"
-                                 type="text"
-                                 class="form-control"
-                                 name="coursename"
-                                 id="coursename"
-                                 [(ngModel)]="editedCourse.course"
-                                 required>
+                            <label for="coursename">Course Name</label>
+                            <input #coursename="ngModel"
+                                   type="text"
+                                   class="form-control"
+                                   name="coursename"
+                                   id="coursename"
+                                   minlength="5"
+                                   maxlength="30"
+                                   [(ngModel)]="editedCourse.course"
+                                   required>
+                            <div
+                                class="alert alert-danger"
+                                *ngIf="coursename.invalid && coursename.touched"
+                            >
+                                <div *ngIf="coursename.errors.required">
+                                    Course Name is required.
+                                </div>
+                                <div *ngIf="coursename.errors.minlength">
+                                    Course Name must be at least 5 characters long.
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
-                          <label for="period">Period</label>
-                          <input #period="ngModel"
-                                 type="number"
-                                 class="form-control"
-                                 name="period"
-                                 id="period"
-                                 [(ngModel)]="editedCourse.period"
-                                 required>
+                            <label for="period">Period</label>
+                            <input #period="ngModel"
+                                   type="number"
+                                   class="form-control"
+                                   name="period"
+                                   id="period"
+                                   [pattern]="periodPattern"
+                                   [(ngModel)]="editedCourse.period"
+                                   required>
+                            <div
+                                class="alert alert-danger"
+                                *ngIf="period.invalid && period.touched"
+                            >
+                                <div *ngIf="period.errors.required">
+                                    Period is required.
+                                </div>
+                                <div *ngIf="period.errors.pattern">
+                                    Period must be 1 and 6 months.
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
-                          <label for="numberOfBooks">Number of books</label>
-                          <input #numberOfBooks="ngModel"
-                                 type="number"
-                                 class="form-control"
-                                 name="numberOfBooks"
-                                 id="numberOfBooks"
-                                 [(ngModel)]="editedCourse.numberOfBooks"
-                                 required>
+                            <label for="numberOfBooks">Number of books</label>
+                            <input #numberOfBooks="ngModel"
+                                   type="number"
+                                   class="form-control"
+                                   name="numberOfBooks"
+                                   id="numberOfBooks"
+                                   [pattern]="booksPattern"
+                                   [(ngModel)]="editedCourse.numberOfBooks"
+                                   required>
+                            <div
+                                class="alert alert-danger"
+                                *ngIf="numberOfBooks.invalid && numberOfBooks.touched"
+                            >
+                                <div *ngIf="numberOfBooks.errors.required">
+                                    Max Number Of Books is required.
+                                </div>
+                                <div *ngIf="numberOfBooks.errors.pattern">
+                                    Max Number Of Books must be 1 and 3.
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
-                          <label for="maxStudent">Number of Students</label>
-                          <input #maxStudent="ngModel"
-                                 type="number"
-                                 class="form-control"
-                                 name="maxStudent"
-                                 id="maxStudent"
-                                 [(ngModel)]="editedCourse.maxStudent"
-                                 required>
+                            <label for="maxStudent">Number of Students</label>
+                            <input #maxStudent="ngModel"
+                                   type="number"
+                                   class="form-control"
+                                   name="maxStudent"
+                                   id="maxStudent"
+                                   [pattern]="studentsPattern"
+                                   [(ngModel)]="editedCourse.maxStudent"
+                                   required>
+                                   <div
+                                   class="alert alert-danger"
+                                   *ngIf="maxStudent.invalid && maxStudent.touched"
+                            >
+                                <div *ngIf="maxStudent.errors.required">
+                                    Max Number Of Students is required.
+                                </div>
+                                <div *ngIf="maxStudent.errors.pattern">
+                                    Max Number Of Students must be 10.
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
-                          <label for="description">Course Description</label>
-                          <textarea #description="ngModel"
-                                    class="form-control"
-                                    name="description"
-                                    id="description"
-                                    rows="3"
-                                    [(ngModel)]="editedCourse.description"
-                                    required></textarea>
+                            <label for="description">Course Description</label>
+                            <textarea #description="ngModel"
+                                      class="form-control"
+                                      name="description"
+                                      id="description"
+                                      rows="3"
+                                      minlength="100"
+                                      maxlength="500"
+                                      [(ngModel)]="editedCourse.description"
+                                      required></textarea>
+                            <div
+                                class="alert alert-danger"
+                                *ngIf="description.invalid && description.touched"
+                            >
+                                <div *ngIf="description.errors.required">
+                                    Description is required.
+                                </div>
+                                <div *ngIf="description.errors.minlength">
+                                    Description must be at least 100 characters long.
+                                </div>
+                            </div>
                         </div>
                         <button 
                             type="submit"

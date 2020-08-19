@@ -14,6 +14,10 @@ export class EditCourseFormComponent implements OnInit {
 
   editedCourse: Course
 
+  periodPattern = "^((\\+91-?)|0)?[0-9]{1}$";
+  booksPattern = "^((\\+91-?)|0)?[0-9]{1}$";
+  studentsPattern = "^((\\+91-?)|0)?[0-9]{2}$";
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private manageCoursesService: ManageCoursesService,
